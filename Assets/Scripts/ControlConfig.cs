@@ -60,6 +60,16 @@ public class ControlConfig : MonoBehaviour
             PC_Pause = "Escape";
             PC_AttackUse = "Left Mouse Button";
             PC_Aim = "Right Mouse Button";
+
+            pcItem1 = KeyCode.Alpha1;
+            pcItem2 = KeyCode.Alpha2;
+            pcItem3 = KeyCode.Alpha3;
+            pcItem4 = KeyCode.Alpha4;
+            pcInv = KeyCode.I;
+            pcPause = KeyCode.Escape;
+            pcAttackUse = KeyCode.Mouse0;
+            pcAim = KeyCode.Mouse1;
+
         }
         else
         {
@@ -84,6 +94,17 @@ public class ControlConfig : MonoBehaviour
             Xbox_Pause = "Start Button";
             Xbox_AttackUse = "Right Trigger";
             Xbox__Aim = "Left Trigger";
+
+            pcItem1 = KeyCode.Alpha1;
+            pcItem2 = KeyCode.Alpha2;
+            pcItem3 = KeyCode.Alpha3;
+            pcItem4 = KeyCode.Alpha4;
+            pcInv = KeyCode.I;
+            pcPause = KeyCode.Escape;
+            pcAttackUse = KeyCode.Mouse0;
+            pcAim = KeyCode.Mouse1;
+            xInv = KeyCode.I;
+            xPause = KeyCode.Escape;
         }
 
     }
@@ -144,6 +165,89 @@ public class ControlConfig : MonoBehaviour
                 SwitchProfile(ControlProfile.Controller);
         }
 
+        GUI.Label(new Rect(15,345,125,20), "Current Control Scheme");
+        if (GUI.Button(new Rect(25,370,135,20), ControlScheme))
+        {
+            if(ControlScheme == "Scheme A")
+            {
+                SwitchControlScheme("B");
+                ControlScheme = "Scheme B";
+            }
+            else
+            {
+                SwitchControlScheme("A");
+                ControlScheme = "Scheme A";
+            }
+        }
         GUI.EndGroup();
+    }
+    void SwitchControlScheme(string Scheme)
+    {
+        switch(Scheme)
+        {
+            case "Scheme A":
+                SetDefaultValues();
+                break;
+            case "Scheme B":
+                if(!isControllerConnected)
+                {
+                    PC_Move = "WASD";
+                    PC_Rotate = "Mouse";
+                    PC_Item1 = "Numpad 1";
+                    PC_Item2 = "Numpad 2";
+                    PC_Item3 = "Numpad 3";
+                    PC_Item4 = "Numpad 4";
+                    PC_Inv = "Numpad +";
+                    PC_Pause = "Enter";
+                    PC_AttackUse = "Right Mouse Button";
+                    PC_Aim = "Left Mouse Button";
+
+                    pcItem1 = KeyCode.Keypad1;
+                    pcItem2 = KeyCode.Keypad2;
+                    pcItem3 = KeyCode.Keypad3;
+                    pcItem4 = KeyCode.Keypad4;
+                    pcInv = KeyCode.KeypadPlus;
+                    pcPause = KeyCode.Return;
+                    pcAttackUse = KeyCode.Mouse1;
+                    pcAim = KeyCode.Mouse0;
+
+                }
+                else
+                {
+                    PC_Move = "WASD";
+                    PC_Rotate = "Mouse";
+                    PC_Item1 = "Numpad 1";
+                    PC_Item2 = "Numpad 2";
+                    PC_Item3 = "Numpad 3";
+                    PC_Item4 = "Numpad 4";
+                    PC_Inv = "Numpad +";
+                    PC_Pause = "Enter";
+                    PC_AttackUse = "Right Mouse Button";
+                    PC_Aim = "Left Mouse Button";
+
+                    Xbox_Move = "Left Thumbstick";
+                    Xbox_Rotate = "Right Thumbstick";
+                    Xbox_Item1 = "D-Pad Up";
+                    Xbox_Item2 = "D-Pad Down";
+                    Xbox_Item3 = "D-Pad Left";
+                    Xbox_Item4 = "D-Pad Right";
+                    Xbox_Inv = "B Button";
+                    Xbox_Pause = "Back Button";
+                    Xbox_AttackUse = "Right Trigger";
+                    Xbox__Aim = "Left Trigger";
+
+                    pcItem1 = KeyCode.Keypad1;
+                    pcItem2 = KeyCode.Keypad2;
+                    pcItem3 = KeyCode.Keypad3;
+                    pcItem4 = KeyCode.Keypad4;
+                    pcInv = KeyCode.KeypadPlus;
+                    pcPause = KeyCode.Return;
+                    pcAttackUse = KeyCode.Mouse1;
+                    pcAim = KeyCode.Mouse0;
+                    xInv = KeyCode.JoystickButton1;
+                    xPause = KeyCode.JoystickButton6;
+                }
+                break;
+        }
     }
 }
