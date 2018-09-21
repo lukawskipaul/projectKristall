@@ -17,7 +17,7 @@ public class LeverPuzzle : MonoBehaviour
 
         if (currentLever == leverOrder[i])
         {
-            Debug.Log("Lever pulled");
+            Debug.Log("Correct lever pulled");
             i++;
 
             if (i == leverOrder.Length)

@@ -9,6 +9,7 @@ public class ActivatableObject : MonoBehaviour, IActivatable
     [SerializeField]
     string nameText;
 
+    
     //Animator anim;
 
     void Start()
