@@ -209,7 +209,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.72
+      value: 6.14
       objectReference: {fileID: 0}
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -386,7 +386,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.3499997
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -513,7 +513,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1586911943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.78}
+  m_LocalPosition: {x: 0, y: 0, z: 1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 622523547}
@@ -529,7 +529,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1586911946
 MonoBehaviour:
@@ -551,7 +551,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.15
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.y
@@ -602,7 +602,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.89
+      value: 9.79
       objectReference: {fileID: 0}
     - target: {fileID: 4935061107962590, guid: fed2bcbb737274e4ca5879c19f4c46b9, type: 2}
       propertyPath: m_LocalPosition.y
