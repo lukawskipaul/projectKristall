@@ -12,7 +12,8 @@ public class ControlConfig : MonoBehaviour
     public string Controller = "";
     public string PC_Move, PC_Rotate, PC_Item1, PC_Item2, PC_Item3, PC_Item4, PC_Inv, PC_Pause, PC_AttackUse, PC_Aim;
     public string Xbox_Move, Xbox_Rotate, Xbox_Item1, Xbox_Item2, Xbox_Item3, Xbox_Item4, Xbox_Inv, Xbox_Pause, Xbox_AttackUse, Xbox__Aim;
-    private KeyCode orig_pcItem1, orig_pcItem2, orig_pcItem3, orig_pcItem4, orig_pcInv, orig_pcPause, orig_xInv, orig_xPause;
+    public string PS4_Move, PS4_Rotate, PS4_Item1, PS4_Item2, PS4_Item3, PS4_Item4, PS4_Inv, PS4_Pause, PS4_AttackUse, PS4_Aim;
+    private KeyCode orig_pcItem1, orig_pcItem2, orig_pcItem3, orig_pcItem4, orig_pcInv, orig_pcPause, orig_xInv, orig_xPause, orig_p4Inv, orig_p4Pause;
     public ControlProfile cProfile;
     string ControlScheme;
     public KeyCode pcItem1, pcItem2, pcItem3, pcItem4, pcInv, pcPause, pcAttackUse, pcAim, xInv, xPause;
@@ -367,7 +368,7 @@ public class ControlConfig : MonoBehaviour
                 PC_Item2 = SetString(pcItem2.ToString());
                 break;
             case KeyCode.Alpha3:
-                pcItem3 SetTo;
+                pcItem3 = SetTo;
                 PC_Item3 = SetString(pcItem3.ToString());
                 break;
             case KeyCode.Alpha4:
