@@ -9,6 +9,7 @@ public class LeverPuzzle : MonoBehaviour
 
 
 
+
     int i = 0;
 
     public void CheckLever(GameObject pressedLever)
@@ -23,7 +24,8 @@ public class LeverPuzzle : MonoBehaviour
             if (i == leverOrder.Length)
             {
                 Debug.Log("Correct Order!");
-                
+
+                GameManager.Instance.canPush = true;
             }
         }
         else
