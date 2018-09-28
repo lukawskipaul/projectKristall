@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+    
 
     //Singleton Game Manager
     private static GameManager instance;
@@ -20,5 +21,10 @@ public class GameManager : MonoBehaviour {
         {
             instance = this;
         }
+    }
+
+    public void ActivatePower(IPowerUp powerUp)
+    {
+        powerUp.IsActivated = true;
     }
 }

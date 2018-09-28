@@ -2,11 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushBlock : MonoBehaviour
+public class PushBlock : MonoBehaviour, IPowerUp
 {
 
     [SerializeField]
     Rigidbody rigidbody;
+
+    private bool isActivePower;
+
+    public string PowerName
+    {
+        get
+        {
+            return "Push";
+        }
+    }
+
+    public bool IsActivated
+    {
+        get
+        {
+            return isActivePower;
+        }
+
+        set
+        {
+            isActivePower = value;
+        }
+    }
 
     private void Start()
     {
@@ -27,7 +50,7 @@ public class PushBlock : MonoBehaviour
             // canPush = true;
             //checks to see if player has the powerup and is sprinting (static variables)
             //canPush = true; //HACK
-            if (GameManager.Instance.canPush)
+            if (isActivePower)
             {
                 rigidbody.isKinematic = false;
             }
@@ -41,5 +64,7 @@ public class PushBlock : MonoBehaviour
         //GameManager.Instance.canPush = false;
         rigidbody.isKinematic = true;
     }
+
+    
 }
 
