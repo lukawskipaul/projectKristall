@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PushBlock : MonoBehaviour
 {
-    bool canPush;
+
     [SerializeField]
     Rigidbody rigidbody;
 
@@ -21,13 +21,13 @@ public class PushBlock : MonoBehaviour
     //TODO: make the player be sprinting
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
             //if(Player.Powerups.Heavyblock && Player.isSprinting)
             // canPush = true;
             //checks to see if player has the powerup and is sprinting (static variables)
-            canPush = true; //HACK
-            if(canPush)
+            //canPush = true; //HACK
+            if (GameManager.Instance.canPush)
             {
                 rigidbody.isKinematic = false;
             }
@@ -38,7 +38,8 @@ public class PushBlock : MonoBehaviour
     //this will need to be changed so that the object falls normally instead of just stops
     private void OnCollisionExit(Collision collision)
     {
-        canPush = false;
+        //GameManager.Instance.canPush = false;
         rigidbody.isKinematic = true;
     }
 }
+
