@@ -9,6 +9,7 @@ public class PushBlock : MonoBehaviour, IPowerUp
     Rigidbody rigidbody;
 
     private bool isActivePower;
+    private bool isUnlocked;
 
     public string PowerName
     {
@@ -31,9 +32,22 @@ public class PushBlock : MonoBehaviour, IPowerUp
         }
     }
 
+    public bool IsUnlocked
+    {
+        get
+        {
+            return isUnlocked;
+        }
+
+        set
+        {
+            isUnlocked = value;
+        }
+    }
+
     private void Start()
     {
-        rigidbody.isKinematic = true;
+        //rigidbody.isKinematic = true;
     }
 
     //Check to see if player is pushing object 
@@ -44,15 +58,15 @@ public class PushBlock : MonoBehaviour, IPowerUp
     //TODO: make the player be sprinting
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Moveable")
         {
             //if(Player.Powerups.Heavyblock && Player.isSprinting)
             // canPush = true;
             //checks to see if player has the powerup and is sprinting (static variables)
             //canPush = true; //HACK
-            if (isActivePower)
+            if (isActivePower && isUnlocked)
             {
-                rigidbody.isKinematic = false;
+                collision.rigidbody.isKinematic = false;
             }
         }
     }
@@ -62,7 +76,7 @@ public class PushBlock : MonoBehaviour, IPowerUp
     private void OnCollisionExit(Collision collision)
     {
         //GameManager.Instance.canPush = false;
-        rigidbody.isKinematic = true;
+        collision.rigidbody.isKinematic = true;
     }
 
     

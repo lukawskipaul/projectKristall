@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ActivatableObject
+  - Moveable
   layers:
   - Default
   - TransparentFX

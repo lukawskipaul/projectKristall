@@ -7,8 +7,6 @@ public class LeverPuzzle : MonoBehaviour
     [SerializeField]
     GameObject[] leverOrder;
 
-    PushBlock pushBlock;
-
 
     int i = 0;
 
@@ -25,7 +23,8 @@ public class LeverPuzzle : MonoBehaviour
             {
                 Debug.Log("Correct Order!");
 
-                GameManager.Instance.ActivatePower(pushBlock);
+                //PowerupManager.Instance.ActivatePower(PowerupManager.Instance.pushBlock);
+                PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
             }
         }
         else
