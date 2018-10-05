@@ -21,10 +21,9 @@ public class LeverPuzzle : MonoBehaviour
 
             if (i == leverOrder.Length)
             {
+                //What we want to happen when the puzzle is solved goes here
                 Debug.Log("Correct Order!");
-
-                //PowerupManager.Instance.ActivatePower(PowerupManager.Instance.pushBlock);
-                PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
+                TestManager.Instance.UnlockPowerup(TestManager.Instance.pushBlock);
             }
         }
         else

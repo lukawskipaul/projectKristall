@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushBlock : PowerUp
-{
-    //Check to see if object is Moveable
+public class TestPush : PowerUp {
+
+    private void Start()
+    {
+        //rigidbody.isKinematic = true;
+    }
+
+    //Check to see if player is pushing object 
     //check if player has powerup to push object
     //if both are true, player can move object
 
+    //TODO: give player powerup
     //TODO: make the player be sprinting
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Moveable")
         {
-
+            //if(Player.Powerups.Heavyblock && Player.isSprinting)
+            // canPush = true;
+            //checks to see if player has the powerup and is sprinting (static variables)
+            //canPush = true; //HACK
             if (IsActivated && IsUnlocked)
             {
                 collision.rigidbody.isKinematic = false;
@@ -25,9 +34,7 @@ public class PushBlock : PowerUp
     //this will need to be changed so that the object falls normally instead of just stops
     private void OnCollisionExit(Collision collision)
     {
+        //GameManager.Instance.canPush = false;
         collision.rigidbody.isKinematic = true;
     }
-
-
 }
-

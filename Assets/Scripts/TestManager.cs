@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupManager : MonoBehaviour {
+public class TestManager : MonoBehaviour {
 
     //Singleton Powerup Manager
-    private static PowerupManager instance;
-    public static PowerupManager Instance { get { return instance; } }
+    private static TestManager instance;
+    public static TestManager Instance { get { return instance; } }
 
     [SerializeField]
     GameObject Player;
 
-    public PushBlock pushBlock;
+    public TestPush pushBlock;
+
 
     List<PowerUp> powerUpsList = new List<PowerUp>();
 
@@ -32,7 +33,7 @@ public class PowerupManager : MonoBehaviour {
 
     private void Start()
     {
-        pushBlock = Player.GetComponent<PushBlock>();
+        pushBlock = Player.GetComponent<TestPush>();
         powerUpsList.Add(pushBlock);
     }
 
