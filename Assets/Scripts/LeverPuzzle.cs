@@ -8,8 +8,6 @@ public class LeverPuzzle : MonoBehaviour
     GameObject[] leverOrder;
 
 
-
-
     int i = 0;
 
     public void CheckLever(GameObject pressedLever)
@@ -23,9 +21,9 @@ public class LeverPuzzle : MonoBehaviour
 
             if (i == leverOrder.Length)
             {
+                //What we want to happen when the puzzle is solved goes here
                 Debug.Log("Correct Order!");
-
-                GameManager.Instance.canPush = true;
+                PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
             }
         }
         else

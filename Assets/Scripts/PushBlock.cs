@@ -2,34 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushBlock : MonoBehaviour
+public class PushBlock : PowerUp
 {
-
-    [SerializeField]
-    Rigidbody rigidbody;
-
-    private void Start()
+    public override string PowerName
     {
-        rigidbody.isKinematic = true;
+        get
+        {
+            return "Push";
+        }
     }
 
-    //Check to see if player is pushing object 
+    //Check to see if object is Moveable
     //check if player has powerup to push object
     //if both are true, player can move object
 
-    //TODO: give player powerup
     //TODO: make the player be sprinting
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Moveable")
         {
-            //if(Player.Powerups.Heavyblock && Player.isSprinting)
-            // canPush = true;
-            //checks to see if player has the powerup and is sprinting (static variables)
-            //canPush = true; //HACK
-            if (GameManager.Instance.canPush)
+
+            if (IsActivated && IsUnlocked)
             {
-                rigidbody.isKinematic = false;
+                collision.rigidbody.isKinematic = false;
             }
         }
     }
@@ -38,8 +33,9 @@ public class PushBlock : MonoBehaviour
     //this will need to be changed so that the object falls normally instead of just stops
     private void OnCollisionExit(Collision collision)
     {
-        //GameManager.Instance.canPush = false;
-        rigidbody.isKinematic = true;
+        collision.rigidbody.isKinematic = true;
     }
+
+
 }
 

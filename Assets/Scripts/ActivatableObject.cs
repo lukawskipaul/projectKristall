@@ -29,8 +29,6 @@ public class ActivatableObject : MonoBehaviour, IActivatable
     {
         // whatever we want to happen
 
-        //anim.Play();
 
-        this.gameObject.SetActive(false);   // just for testing
     }
 }
