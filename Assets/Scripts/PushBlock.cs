@@ -33,7 +33,11 @@ public class PushBlock : PowerUp
     //this will need to be changed so that the object falls normally instead of just stops
     private void OnCollisionExit(Collision collision)
     {
-        collision.rigidbody.isKinematic = true;
+        if (collision.transform.tag == "Moveable")
+        {
+            collision.rigidbody.isKinematic = true;
+        }
+        
     }
 
 
