@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: 1a2d79c14995b464ba1003cbeb2f9bf8
+guid: 44578bfeadebbea4fa4f8c0bc14cd201
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Altar2
-    100002: //RootNode
-    400000: Altar2
-    400002: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: lambert1
-    2300000: Altar2
-    3300000: Altar2
-    4300000: Altar2
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Torch2
   externalObjects: {}
   materials:
     importMaterials: 1

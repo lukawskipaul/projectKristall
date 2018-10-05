@@ -1,14 +1,48 @@
 fileFormatVersion: 2
-guid: bffda52bfbff51a43be7bda948031d26
+guid: 97ded48cb1cdc3d408656f69afe037ab
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: pCube1
+    100002: pCube2
+    100004: pCube3
+    100006: pCube4
+    100008: pCube5
+    100010: pCube6
+    100012: pCube7
+    100014: Rock
+    100016: //RootNode
+    100018: Rock 1
+    100020: transform1
+    100022: transform2
+    100024: transform3
+    100026: transform4
+    100028: transform5
+    100030: transform6
+    100032: transform7
+    100034: transform8
+    400000: pCube1
+    400002: pCube2
+    400004: pCube3
+    400006: pCube4
+    400008: pCube5
+    400010: pCube6
+    400012: pCube7
+    400014: Rock
+    400016: //RootNode
+    400018: Rock 1
+    400020: transform1
+    400022: transform2
+    400024: transform3
+    400026: transform4
+    400028: transform5
+    400030: transform6
+    400032: transform7
+    400034: transform8
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Torch4
+    2300000: Rock 1
+    3300000: Rock 1
+    4300000: Rock
   externalObjects: {}
   materials:
     importMaterials: 1

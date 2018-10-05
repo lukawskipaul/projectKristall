@@ -1,36 +1,14 @@
 fileFormatVersion: 2
-guid: dde20b629e251144a8cd90615faa45cb
+guid: a752d86088395da4b917cdf2ec2f7f20
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Bench
-    100002: //RootNode
-    100004: pCube5
-    100006: pCube6
-    100008: pCube7
-    100010: pCube8
-    100012: pCube9
-    100014: transform1
-    100016: transform2
-    100018: transform3
-    100020: transform4
-    100022: transform5
-    400000: Bench
-    400002: //RootNode
-    400004: pCube5
-    400006: pCube6
-    400008: pCube7
-    400010: pCube8
-    400012: pCube9
-    400014: transform1
-    400016: transform2
-    400018: transform3
-    400020: transform4
-    400022: transform5
-    2100000: lambert1
-    2300000: Bench
-    3300000: Bench
-    4300000: Bench
+    100000: //RootNode
+    400000: //RootNode
+    2100000: aiStandardSurface1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Candle2
   externalObjects: {}
   materials:
     importMaterials: 1

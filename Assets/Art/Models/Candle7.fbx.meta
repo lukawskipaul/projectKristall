@@ -4,11 +4,23 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Candle7
+    100004: pCylinder9
+    100006: polySurface23
+    100008: polySurface24
+    100010: transform11
+    100012: transform12
     400000: //RootNode
-    2100000: aiStandardSurface1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: candle5
+    400002: Candle7
+    400004: pCylinder9
+    400006: polySurface23
+    400008: polySurface24
+    400010: transform11
+    400012: transform12
+    2100000: lambert1
+    2300000: Candle7
+    3300000: Candle7
+    4300000: Candle7
   externalObjects: {}
   materials:
     importMaterials: 1

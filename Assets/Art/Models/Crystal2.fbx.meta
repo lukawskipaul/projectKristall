@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: bffda52bfbff51a43be7bda948031d26
+guid: 1ef88be896d471e43a4f8af580fb7b58
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: lambert2
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Torch4
+    4300000: Crystal
   externalObjects: {}
   materials:
     importMaterials: 1

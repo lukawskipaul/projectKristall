@@ -1,14 +1,29 @@
 fileFormatVersion: 2
-guid: 6e3fdeaa44a43ca4a980901f37f9740c
+guid: a25aea394333fc347869f7426cfdee73
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert3
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Door3
+    100000: candle10
+    100002: candle11
+    100004: //RootNode
+    100006: pCylinder3
+    100008: smallCandle:pCylinder3
+    100010: smallCandle:transform1
+    100012: smallCandle:transform2
+    400000: candle10
+    400002: candle11
+    400004: //RootNode
+    400006: pCylinder3
+    400008: smallCandle:pCylinder3
+    400010: smallCandle:transform1
+    400012: smallCandle:transform2
+    2100000: aiStandardSurface1
+    2300000: candle10
+    2300002: candle11
+    3300000: candle10
+    3300002: candle11
+    4300000: candle10
+    4300002: candle11
   externalObjects: {}
   materials:
     importMaterials: 1

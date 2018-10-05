@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 0f5f65fb715192b45a63d5de9260fe89
+guid: 007cae5784411dc4b9a1df5363ecac4f
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: aiStandardSurface1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Pillar
+    4300000: candle9
   externalObjects: {}
   materials:
     importMaterials: 1

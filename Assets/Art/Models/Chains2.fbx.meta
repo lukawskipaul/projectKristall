@@ -1,29 +1,76 @@
 fileFormatVersion: 2
-guid: a2fe65d591218734b8e222bf8b766428
+guid: f3bbcc8153fc7694b9ea813b275c22cd
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: candle10
-    100002: candle11
-    100004: //RootNode
-    100006: pCylinder3
-    100008: smallCandle:pCylinder3
-    100010: smallCandle:transform1
-    100012: smallCandle:transform2
-    400000: candle10
-    400002: candle11
-    400004: //RootNode
-    400006: pCylinder3
-    400008: smallCandle:pCylinder3
-    400010: smallCandle:transform1
-    400012: smallCandle:transform2
-    2100000: aiStandardSurface1
-    2300000: candle10
-    2300002: candle11
-    3300000: candle10
-    3300002: candle11
-    4300000: candle10
-    4300002: candle11
+    100000: Chain2
+    100002: //RootNode
+    100004: transform105
+    100006: transform106
+    100008: transform107
+    100010: transform108
+    100012: transform109
+    100014: transform110
+    100016: transform111
+    100018: transform112
+    100020: transform113
+    100022: transform114
+    100024: transform115
+    100026: transform116
+    100028: transform117
+    100030: transform118
+    100032: transform119
+    100034: transform3_130
+    100036: transform3_131
+    100038: transform3_132
+    100040: transform3_133
+    100042: transform3_134
+    100044: transform3_135
+    100046: transform3_136
+    100048: transform3_137
+    100050: transform3_138
+    100052: transform3_139
+    100054: transform3_140
+    100056: transform3_141
+    100058: transform3_142
+    100060: transform3_143
+    100062: transform3_144
+    400000: Chain2
+    400002: //RootNode
+    400004: transform105
+    400006: transform106
+    400008: transform107
+    400010: transform108
+    400012: transform109
+    400014: transform110
+    400016: transform111
+    400018: transform112
+    400020: transform113
+    400022: transform114
+    400024: transform115
+    400026: transform116
+    400028: transform117
+    400030: transform118
+    400032: transform119
+    400034: transform3_130
+    400036: transform3_131
+    400038: transform3_132
+    400040: transform3_133
+    400042: transform3_134
+    400044: transform3_135
+    400046: transform3_136
+    400048: transform3_137
+    400050: transform3_138
+    400052: transform3_139
+    400054: transform3_140
+    400056: transform3_141
+    400058: transform3_142
+    400060: transform3_143
+    400062: transform3_144
+    2100000: lambert1
+    2300000: Chain2
+    3300000: Chain2
+    4300000: Chain2
   externalObjects: {}
   materials:
     importMaterials: 1
