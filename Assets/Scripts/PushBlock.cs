@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PushBlock : PowerUp
 {
+    public override string PowerName
+    {
+        get
+        {
+            return "Push";
+        }
+    }
+
     //Check to see if object is Moveable
     //check if player has powerup to push object
     //if both are true, player can move object

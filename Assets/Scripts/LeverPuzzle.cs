@@ -23,7 +23,7 @@ public class LeverPuzzle : MonoBehaviour
             {
                 //What we want to happen when the puzzle is solved goes here
                 Debug.Log("Correct Order!");
-                TestManager.Instance.UnlockPowerup(TestManager.Instance.pushBlock);
+                PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
             }
         }
         else

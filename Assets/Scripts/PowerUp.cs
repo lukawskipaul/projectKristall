@@ -6,8 +6,9 @@ public abstract class PowerUp : MonoBehaviour {
 
     private bool isActivated;
     private bool isUnlocked;
+    private string powerName = "Implement PowerName Property";
 
-    public string PowerName
+    public virtual string PowerName
     {
         get
         {
