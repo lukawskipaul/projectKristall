@@ -6,10 +6,10 @@ public class BasicMove : MonoBehaviour {
 
     public float movementSpeed;
     public float rotationSpeed;
-    public float rotX;
-    public float rotY;
-    public float rotZ;
-    public Rigidbody rigidbody;
+    private float rotX;
+    private float rotY;
+    private float rotZ;
+    private new Rigidbody rigidbody;
 
 	// Use this for initialization
 	void Start () {
@@ -42,17 +42,6 @@ public class BasicMove : MonoBehaviour {
         {
             rigidbody.transform.position -= rigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
         }
-        
-
-        /*
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
-
-        transform.Rotate(0, x, 0);
-        transform.Translate(0, 0, z);
-        */
-
-        
         if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift))
         {
             if (rigidbody.transform.position.y <= 1.05f)
