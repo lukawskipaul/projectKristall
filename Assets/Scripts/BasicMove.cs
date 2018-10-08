@@ -70,9 +70,18 @@ public class BasicMove : MonoBehaviour {
         rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
         rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
 
+        if(rotX < -35f)
+        {
+            rotX = -35f;
+        }
+        else if(rotX > 35f)
+        {
+            rotX = 35f;
+        }
+
         transform.rotation = Quaternion.Euler(0, rotY, 0);
-        if(rotY <= VertRotMax && rotY >= VertRotMin)
-            GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+        GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+
         
     }
 }
