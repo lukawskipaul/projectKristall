@@ -9,6 +9,10 @@ public class BasicMove : MonoBehaviour {
     private float rotX;
     private float rotY;
     private float rotZ;
+    private float VertRotMin = 0f;
+    private float VertRotMax = 65f;
+    private float mouseX;
+    private float mouseY;
     private new Rigidbody rigidbody;
 
 	// Use this for initialization
@@ -66,8 +70,18 @@ public class BasicMove : MonoBehaviour {
         rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
         rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
 
+        if(rotX < -35f)
+        {
+            rotX = -35f;
+        }
+        else if(rotX > 35f)
+        {
+            rotX = 35f;
+        }
+
         transform.rotation = Quaternion.Euler(0, rotY, 0);
         GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+
         
     }
 }
