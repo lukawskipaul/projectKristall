@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ActivatableObject
   - Moveable
+  - Hook
   layers:
   - Default
   - TransparentFX
