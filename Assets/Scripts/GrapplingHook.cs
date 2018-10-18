@@ -23,14 +23,14 @@ public class GrapplingHook : MonoBehaviour
         if (InputManager.BButton() && fired == false)
             fired = true;
 
-        if(fired)
+        if (fired)
         {
             LineRenderer rope = hook.GetComponent<LineRenderer>();
             rope.SetVertexCount(2);
             rope.SetPosition(0, hookHolder.transform.position);
             rope.SetPosition(1, hook.transform.position);
         }
-        
+
 
         if (fired == true && hooked == false)
         {
@@ -40,7 +40,7 @@ public class GrapplingHook : MonoBehaviour
             if (currentDistance >= maxDistance)
                 ReturnHook();
         }
-        if(hooked == true && fired == true)
+        if (hooked == true && fired == true)
         {
             hook.transform.parent = hookedObj.transform;
             transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
@@ -50,7 +50,7 @@ public class GrapplingHook : MonoBehaviour
 
             if (distanceToHook < 1)
             {
-                if(grounded == false)
+                if (grounded == false)
                 {
                     this.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
                     this.transform.Translate(Vector3.up * Time.deltaTime * 18f);
@@ -91,7 +91,7 @@ public class GrapplingHook : MonoBehaviour
 
         Vector3 dir = new Vector3(0, -1);
 
-        if(Physics.Raycast(transform.position, dir, out hit, distance))
+        if (Physics.Raycast(transform.position, dir, out hit, distance))
         {
             grounded = true;
         }
@@ -101,4 +101,3 @@ public class GrapplingHook : MonoBehaviour
         }
     }
 }
-

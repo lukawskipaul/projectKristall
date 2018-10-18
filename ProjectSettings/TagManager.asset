@@ -7,7 +7,6 @@ TagManager:
   - ActivatableObject
   - Moveable
   - Hook
-  - Hookable
   layers:
   - Default
   - TransparentFX
@@ -18,8 +17,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 

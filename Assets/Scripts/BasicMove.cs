@@ -13,51 +13,70 @@ public class BasicMove : MonoBehaviour {
     private float VertRotMax = 65f;
     private float mouseX;
     private float mouseY;
-    private new Rigidbody rigidbody;
+    private bool canMove = true;
+    public Rigidbody playerRigidbody;
+    private Vector3 vector3;
+    
+
+    [SerializeField]
+    GameObject camRig;
+
+    [SerializeField]
+    CapsuleCollider playerCollider;
+
+    [SerializeField]
+    LayerMask groundLayers;
+
+    [SerializeField]
+    public float jumpForce = 100f;
+
+    [SerializeField]
+    public float superJumpModifier = 2f;
 
 	// Use this for initialization
 	void Start () {
-        rigidbody = GetComponent<Rigidbody>();
+        playerRigidbody = GetComponent<Rigidbody>();
 	}
 
     void FixedUpdate()
     {
-        
-        rigidbody.detectCollisions = true;
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("w"))
-        {
-            
-           rigidbody.transform.position += rigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
-        }
-        else if (Input.GetKey("w") && !Input.GetKey(KeyCode.LeftShift))
-        {
-            rigidbody.transform.position += rigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
-        }
-        else if (Input.GetKey("s"))
-        {
-            rigidbody.transform.position -= rigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed; 
-        }
 
-        if(Input.GetKey("a") && !Input.GetKey("d"))
+        if (canMove)
         {
-            rigidbody.transform.position += rigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
-        }
-        else if (Input.GetKey("d") && !Input.GetKey("a"))
-        {
-            rigidbody.transform.position -= rigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
-        }
-        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift))
-        {
-            if (rigidbody.transform.position.y <= 1.05f)
+            playerRigidbody.detectCollisions = true;
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("w"))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * 1000);
+
+                playerRigidbody.transform.position += playerRigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
             }
-        }
-        else if (Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift))
-        {
-            if (rigidbody.transform.position.y <= 1.05f)
+            else if (Input.GetKey("w") && !Input.GetKey(KeyCode.LeftShift))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * 500);
+                playerRigidbody.transform.position += playerRigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
+            }
+            else if (Input.GetKey("s"))
+            {
+                playerRigidbody.transform.position -= playerRigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
+            }
+
+            if (Input.GetKey("a") && !Input.GetKey("d"))
+            {
+                playerRigidbody.transform.position += playerRigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
+            }
+            else if (Input.GetKey("d") && !Input.GetKey("a"))
+            {
+                playerRigidbody.transform.position -= playerRigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
+            }
+            //if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift) && IsGrounded())
+            //{
+            //    GetComponent<Rigidbody>().AddForce(Vector3.up * (jumpForce * superJumpModifier), ForceMode.Impulse);
+
+            //}
+            else if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift) && IsGrounded())
+            {
+
+                GetComponent<Rigidbody>().AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
+
+
             }
         }
         
@@ -65,23 +84,56 @@ public class BasicMove : MonoBehaviour {
 
     private void Update()
     {
-        
-        rigidbody.detectCollisions = true;
-        rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
-        rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
-
-        if(rotX < -35f)
+        if (canMove)
         {
-            rotX = -35f;
-        }
-        else if(rotX > 35f)
-        {
-            rotX = 35f;
-        }
+            playerRigidbody.detectCollisions = true;
+            rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
+            rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
 
-        transform.rotation = Quaternion.Euler(0, rotY, 0);
-        GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+            if (rotX < -35f)
+            {
+                rotX = -35f;
+            }
+            else if (rotX > 35f)
+            {
+                rotX = 35f;
+            }
 
-        
+            transform.rotation = Quaternion.Euler(0, rotY, 0);
+            //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+            camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+        }
+            
+    }
+
+
+    public bool IsGrounded()
+    {
+        return Physics.CheckCapsule(playerCollider.bounds.center, new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.08f, playerCollider.bounds.center.z), playerCollider.radius * 0.9f, groundLayers);        
+
+
+    }
+
+    private void StopMove()
+    {
+        canMove = false;
+
+    }
+
+    private void StartMove()
+    {
+        canMove = true;
+    }
+
+    private void OnEnable()
+    {
+        LevitateMoveObject.TeleMovingObject += StopMove;
+        LevitateMoveObject.TeleStoppedMovingObject += StartMove;
+    }
+
+    private void OnDisable()
+    {
+        LevitateMoveObject.TeleMovingObject -= StopMove;
+        LevitateMoveObject.TeleStoppedMovingObject -= StartMove;
     }
 }
