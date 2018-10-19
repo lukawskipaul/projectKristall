@@ -37,7 +37,7 @@ public class AirDashPower : PowerUp {
     private void AirDash()
     {
         //playerRigidBody.useGravity = false;
-        if (canDash && !basicMove.IsGrounded())
+        if (canDash && !basicMove.isOnGround)
         {
             playerRigidBody.AddForce(playerRigidBody.transform.forward * dashStrength);
             canDash = false;

@@ -14,9 +14,12 @@ public class BasicMove : MonoBehaviour {
     private float mouseX;
     private float mouseY;
     private bool canMove = true;
+    public bool isOnGround = true;
     public Rigidbody playerRigidbody;
     private Vector3 vector3;
-    
+
+    [SerializeField]
+    float distance = 2f;
 
     [SerializeField]
     GameObject camRig;
@@ -41,7 +44,7 @@ public class BasicMove : MonoBehaviour {
 
     void FixedUpdate()
     {
-        Debug.Log("Is on ground:" + IsGrounded());
+        
         if (canMove)
         {
             playerRigidbody.detectCollisions = true;
@@ -67,24 +70,33 @@ public class BasicMove : MonoBehaviour {
             {
                 playerRigidbody.transform.position -= playerRigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift) && IsGrounded())
-            {
-                GetComponent<Rigidbody>().AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
-            }
+            Jump();
         }
 
     }
 
+    private void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift) && isOnGround)
+        {
+            GetComponent<Rigidbody>().AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
+            isOnGround = false;
+        }
+            
+    }
+
     public void SuperJump()
     {
-        if (InputManager.AButton() && Input.GetKey(KeyCode.LeftShift) && IsGrounded())
+        if (InputManager.AButton() && Input.GetKey(KeyCode.LeftShift) && isOnGround)
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * (jumpForce * superJumpModifier), ForceMode.Impulse);
+            isOnGround = false;
         }        
     }
 
     private void Update()
     {
+        IsGrounded();
         if (canMove)
         {
             playerRigidbody.detectCollisions = true;
@@ -108,24 +120,32 @@ public class BasicMove : MonoBehaviour {
     }
 
 
-    public bool IsGrounded()
+    public void IsGrounded()
     {
-        return Physics.CheckCapsule(playerCollider.bounds.center,
-            new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.1f, playerCollider.bounds.center.z), playerCollider.radius * 0.9f, groundLayers);
-
-        //RaycastHit hit;
-        //float distance = 1f;
-
-        //Vector3 dir = new Vector3(0, -1);
-        //Debug.DrawRay(transform.position, dir, Color.red);
-        //if (Physics.Raycast(transform.position, dir, out hit, distance))
+        //if (Physics.CheckCapsule(playerCollider.bounds.center,
+        //    new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.01f, playerCollider.bounds.center.z), playerCollider.radius * 0.9f, groundLayers))
         //{
-        //    return true;
+        //    isOnGround = true;
         //}
         //else
         //{
-        //    return false;
+        //    isOnGround = false;
         //}
+
+
+        RaycastHit hit;
+
+        Vector3 dir = new Vector3(0, -1);
+        Vector3 testDir = new Vector3(0, -distance);
+        Debug.DrawRay(transform.position, testDir, Color.red);
+        if (Physics.Raycast(transform.position, dir, distance, groundLayers))
+        {
+            isOnGround = true;
+        }
+        else
+        {
+            isOnGround = false;
+        }
 
     }
 
