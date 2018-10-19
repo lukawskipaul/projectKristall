@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e80a644514f64743959048d3f015419
+guid: 17ff3af2f515def458920c5b8ae82157
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -9,7 +9,6 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Moosifant_Low_Poly:Group3399
-    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +42,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

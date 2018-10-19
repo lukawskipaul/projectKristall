@@ -36,11 +36,12 @@ public class BasicMove : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         playerRigidbody = GetComponent<Rigidbody>();
+        
 	}
 
     void FixedUpdate()
     {
-
+        Debug.Log("Is on ground:" + IsGrounded());
         if (canMove)
         {
             playerRigidbody.detectCollisions = true;
@@ -109,8 +110,22 @@ public class BasicMove : MonoBehaviour {
 
     public bool IsGrounded()
     {
-        return Physics.CheckCapsule(playerCollider.bounds.center, new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.08f, playerCollider.bounds.center.z), playerCollider.radius * 0.9f, groundLayers);        
+        return Physics.CheckCapsule(playerCollider.bounds.center,
+            new Vector3(playerCollider.bounds.center.x, playerCollider.bounds.min.y - 0.1f, playerCollider.bounds.center.z), playerCollider.radius * 0.9f, groundLayers);
 
+        //RaycastHit hit;
+        //float distance = 1f;
+
+        //Vector3 dir = new Vector3(0, -1);
+        //Debug.DrawRay(transform.position, dir, Color.red);
+        //if (Physics.Raycast(transform.position, dir, out hit, distance))
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
 
     }
 
