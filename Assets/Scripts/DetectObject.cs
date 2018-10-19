@@ -22,7 +22,8 @@ public class DetectObject : MonoBehaviour {
         
         if (other.tag == "ActivatableObject")
         {
-            activatableObject = other.gameObject.GetComponent<IActivatable>();           
+            Debug.Log("Collided with Activatable");
+            activatableObject = other.gameObject.GetComponentInParent<IActivatable>();
         }
         if (other.tag == "LevitatableObject")
         {
@@ -45,6 +46,7 @@ public class DetectObject : MonoBehaviour {
     {
         if (Input.GetButtonDown("Activate"))
         {
+            
             if (activatableObject != null)
             {
                 activatableObject.DoActivate();

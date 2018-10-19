@@ -67,20 +67,20 @@ public class BasicMove : MonoBehaviour {
             {
                 playerRigidbody.transform.position -= playerRigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
             }
-            //if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift) && IsGrounded())
-            //{
-            //    GetComponent<Rigidbody>().AddForce(Vector3.up * (jumpForce * superJumpModifier), ForceMode.Impulse);
-
-            //}
             else if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift) && IsGrounded())
             {
-
                 GetComponent<Rigidbody>().AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
-
-
             }
         }
-        
+
+    }
+
+    public void SuperJump()
+    {
+        if (InputManager.AButton() && Input.GetKey(KeyCode.LeftShift) && IsGrounded())
+        {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * (jumpForce * superJumpModifier), ForceMode.Impulse);
+        }        
     }
 
     private void Update()

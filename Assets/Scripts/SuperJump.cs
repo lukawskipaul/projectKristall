@@ -26,10 +26,6 @@ public class SuperJump : PowerUp {
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.LeftShift) && playerBasicMove.IsGrounded())
-        {
-            playerBasicMove.playerRigidbody.AddForce(Vector3.up * (playerBasicMove.jumpForce * playerBasicMove.superJumpModifier), ForceMode.Impulse);
-
-        }
+        playerBasicMove.SuperJump();
     }
 }
