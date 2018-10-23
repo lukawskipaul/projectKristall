@@ -10,12 +10,13 @@
 [LOG] OutputCoreAudio::enumerate               : Found output driver: "iShowU Audio Capture".
 [LOG] OutputCoreAudio::enumerate               : Found output driver: "DAW Video Multi-Output Device".
 [LOG] OutputCoreAudio::enumerate               : Done.
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 48000Hz sample rate.
+[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
 [LOG] OutputCoreAudio::init                    : Maximum hardware read size: 1024 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x120e2a608 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x163065208 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -38,44 +39,44 @@
 [LOG] SystemI::createSound                     : filename = /Users/-Jason-/Desktop/Large Team Game/projectKristall-sounds/FmodLargeTeam1/Build/Desktop/windbank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 0x13d854638 : node = 0x13d85fb90
-[LOG] SystemI::createSound                     : add node to async list : head = 0x13d85fe08.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x13d854638
+[LOG] SystemI::createSound                     : setdata soundi = 0x121e482c8 : node = 0x121e48480
+[LOG] SystemI::createSound                     : add node to async list : head = 0x121e486f8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x121e482c8
 [LOG] SystemI::createSoundInternal             :     Create name='/Users/-Jason-/Desktop/Large Team Game/projectKristall-sounds/FmodLargeTeam1/Build/Desktop/windbank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 556672
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 1856
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x13d85fca8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x121e48598
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 9500
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='__weak-wind', format=2, channels=2, frequency=48000, lengthbytes=556064, lengthpcm=2906496, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.916386.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x13d854638
-[LOG] SoundI::getSubSound                      : sound 0x13d854638.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x121e482c8
+[LOG] SoundI::getSubSound                      : sound 0x121e482c8.  Subsound index 0 / 1
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 51552
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 2112
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x70000e8137bc
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0x70000f9887bc
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x15b3bff9f
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x15b3c005b
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x15b3c008b
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x15b3c0128
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x13d81cd48
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 0x15d487f9f
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 0x15d48805b
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 0x15d48808b
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 0x15d488128
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0x1390d2bd8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='moving boulder', format=2, channels=2, frequency=48000, lengthbytes=51392, lengthpcm=187613, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] SoundI::release                          : __weak-wind (0x13d854638)
-[LOG] SoundI::release                          :     __weak-wind (0x13d857248)
-[LOG] SoundI::release                          :     __weak-wind (0x13d8573d8)
-[LOG] SoundI::release                          :  (0x13d816698)
-[LOG] SoundI::release                          :     moving boulder (0x13d816db8)
+[LOG] SoundI::release                          : __weak-wind (0x121e482c8)
+[LOG] SoundI::release                          :     __weak-wind (0x13da01528)
+[LOG] SoundI::release                          :     __weak-wind (0x13da03ed8)
+[LOG] SoundI::release                          :  (0x1390cef98)
+[LOG] SoundI::release                          :     moving boulder (0x1390d4228)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
