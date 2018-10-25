@@ -8,6 +8,7 @@ TagManager:
   - Moveable
   - Hook
   - Hookable
+  - LevitatableObject
   layers:
   - Default
   - TransparentFX

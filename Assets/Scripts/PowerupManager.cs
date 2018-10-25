@@ -37,8 +37,8 @@ public class PowerupManager : MonoBehaviour {
 
     private void Start()
     {
-        pushBlock = Player.GetComponent<PushBlock>();
-        powerUpsList.Add(pushBlock);
+        //pushBlock = Player.GetComponent<PushBlock>();
+        //powerUpsList.Add(pushBlock);
     }
 
     private void Update()
