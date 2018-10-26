@@ -115,8 +115,11 @@ ModelImporter:
     400108: transform56
     2100000: lambert1
     2300000: transform3_56
+    2300002: //RootNode
     3300000: transform3_56
+    3300002: //RootNode
     4300000: transform3_56
+    4300002: Chain1
   externalObjects: {}
   materials:
     importMaterials: 1

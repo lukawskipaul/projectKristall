@@ -41,7 +41,9 @@ ModelImporter:
     400034: transform8
     2100000: lambert1
     2300000: Rock 1
+    2300002: Rock
     3300000: Rock 1
+    3300002: Rock
     4300000: Rock
   externalObjects: {}
   materials:

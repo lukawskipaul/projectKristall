@@ -23,8 +23,11 @@ ModelImporter:
     400016: transform3
     2100000: lambert1
     2300000: Altar3
+    2300002: //RootNode
     3300000: Altar3
+    3300002: //RootNode
     4300000: Altar3
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -56,9 +59,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

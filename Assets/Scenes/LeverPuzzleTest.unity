@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -457,8 +457,8 @@ Transform:
   m_LocalPosition: {x: -2.86, y: 1.49, z: -1.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1788075159}
   - {fileID: 1586911944}
+  - {fileID: 1566127200}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -488,6 +488,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3210ef38b9e47e479839bcdfe82434e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 0
+  rotationSpeed: 0
+  isOnGround: 1
+  playerRigidbody: {fileID: 0}
+  distance: 2
+  camRig: {fileID: 0}
+  playerCollider: {fileID: 0}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 100
+  superJumpModifier: 2
 --- !u!114 &622523550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,7 +549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95b00ea31299de4da9d1177be3d6f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPush: 0
 --- !u!4 &901718801
 Transform:
   m_ObjectHideFlags: 0
@@ -665,7 +676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ff5fb89ef9dbc43b1d73dc9ce04673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 1045190016}
 --- !u!114 &1045190022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,6 +878,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1566127199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1566127200}
+  m_Layer: 0
+  m_Name: CamRig
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1566127200
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1566127199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1788075159}
+  m_Father: {fileID: 622523547}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575193832
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +939,7 @@ MonoBehaviour:
   - {fileID: 1090596672}
   - {fileID: 1862884751}
   - {fileID: 2005651051}
+  correctLever: 0
 --- !u!4 &1575193834
 Transform:
   m_ObjectHideFlags: 0
@@ -944,7 +984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 622523547}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1586911945
 SphereCollider:
@@ -1178,7 +1218,7 @@ Transform:
   m_LocalPosition: {x: -0.3191352, y: 2.84, z: -4.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 622523547}
+  m_Father: {fileID: 1566127200}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 18.214, y: 0, z: 0}
 --- !u!1 &1862884751 stripped

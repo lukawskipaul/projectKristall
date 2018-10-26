@@ -18,9 +18,13 @@ ModelImporter:
     400010: transform11
     400012: transform12
     2100000: lambert1
+    2100002: aiStandardSurface1
     2300000: Candle7
+    2300002: //RootNode
     3300000: Candle7
+    3300002: //RootNode
     4300000: Candle7
+    4300002: candle7
   externalObjects: {}
   materials:
     importMaterials: 1

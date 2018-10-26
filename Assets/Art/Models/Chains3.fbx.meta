@@ -201,7 +201,9 @@ ModelImporter:
     400194: transform99
     2100000: lambert1
     2300000: Chain3
+    2300002: //RootNode
     3300000: Chain3
+    3300002: //RootNode
     4300000: Chain3
   externalObjects: {}
   materials:
