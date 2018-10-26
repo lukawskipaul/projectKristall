@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: /Users/-Jason-/Desktop/Large Team Game/projectKristall-sounds/FmodLargeTeam1/FmodLargeTeam1.fspro
-  SourceProjectPathUnformatted: /Users/-Jason-/Desktop/Large Team Game/projectKristall-sounds/FmodLargeTeam1/FmodLargeTeam1.fspro
-  SourceBankPathUnformatted: /Users/-Jason-/Desktop/Large Team Game/projectKristall-sounds/FmodLargeTeam1/Build
+  sourceProjectPath: Assets\FmodLargeTeam1\FmodLargeTeam1.fspro
+  SourceProjectPathUnformatted: Assets\FmodLargeTeam1\FmodLargeTeam1.fspro
+  SourceBankPathUnformatted: Assets\FmodLargeTeam1\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
