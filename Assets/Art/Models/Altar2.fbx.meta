@@ -5,11 +5,15 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Altar2
     100002: //RootNode
+    100004: Altar2 1
     400000: Altar2
     400002: //RootNode
+    400004: Altar2 1
     2100000: lambert1
     2300000: Altar2
+    2300002: Altar2 1
     3300000: Altar2
+    3300002: Altar2 1
     4300000: Altar2
   externalObjects: {}
   materials:

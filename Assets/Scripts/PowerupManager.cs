@@ -37,8 +37,11 @@ public class PowerupManager : MonoBehaviour {
 
     private void Start()
     {
-        //pushBlock = Player.GetComponent<PushBlock>();
-        //powerUpsList.Add(pushBlock);
+        powerUpsList.Add(pushBlock);
+        powerUpsList.Add(levitateObject);
+        powerUpsList.Add(levitateMoveObject);
+        powerUpsList.Add(airDash);
+        powerUpsList.Add(superJump);
     }
 
     private void Update()
@@ -83,32 +86,22 @@ public class PowerupManager : MonoBehaviour {
         }
         if (Input.GetButtonDown("Powerup2"))
         {
-            UnlockPowerup(levitateObject);
             ActivatePower(levitateObject);
 
         }
         if (Input.GetButtonDown("Powerup3"))
         {
-            UnlockPowerup(hoverPowerup);
-            ActivatePower(hoverPowerup);
+            ActivatePower(superJump);
 
         }
         if (Input.GetButtonDown("Powerup4"))
         {
-            UnlockPowerup(levitateMoveObject);
             ActivatePower(levitateMoveObject);
 
         }
         if (Input.GetButtonDown("Powerup5"))
         {
-            UnlockPowerup(airDash);
             ActivatePower(airDash);
-
-        }
-        if (Input.GetButtonDown("Powerup6"))
-        {
-            UnlockPowerup(superJump);
-            ActivatePower(superJump);
 
         }
     }
@@ -136,6 +129,14 @@ public class PowerupManager : MonoBehaviour {
             }
         }
 
+    }
+
+    public void UnlockAll()
+    {
+        foreach (PowerUp power in powerUpsList)
+        {
+            UnlockPowerup(power);
+        }
     }
 
     public void UnlockPowerup(PowerUp powerUp)

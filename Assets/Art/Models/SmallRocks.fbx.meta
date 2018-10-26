@@ -65,8 +65,11 @@ ModelImporter:
     400058: transform9
     2100000: lambert1
     2300000: polySurface6
+    2300002: //RootNode
     3300000: polySurface6
+    3300002: //RootNode
     4300000: polySurface6
+    4300002: SmallRocks
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -29,7 +29,9 @@ ModelImporter:
     400022: transform5
     2100000: lambert1
     2300000: Bench
+    2300002: //RootNode
     3300000: Bench
+    3300002: //RootNode
     4300000: Bench
   externalObjects: {}
   materials:

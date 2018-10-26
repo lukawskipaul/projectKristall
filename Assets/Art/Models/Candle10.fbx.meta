@@ -17,7 +17,9 @@ ModelImporter:
     400010: smallCandle:transform2
     2100000: aiStandardSurface1
     2300000: candle10
+    2300002: //RootNode
     3300000: candle10
+    3300002: //RootNode
     4300000: candle10
   externalObjects: {}
   materials:

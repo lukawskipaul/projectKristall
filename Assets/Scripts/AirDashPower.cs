@@ -18,15 +18,12 @@ public class AirDashPower : PowerUp {
 
     private bool canDash = true;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-
+    public override string PowerName
+    {
+        get
+        {
+            return "Air Dash";
+        }
     }
 
     public override void UsePower()
@@ -39,6 +36,7 @@ public class AirDashPower : PowerUp {
         //playerRigidBody.useGravity = false;
         if (canDash && !basicMove.isOnGround)
         {
+            Debug.Log(basicMove.isOnGround);
             playerRigidBody.AddForce(playerRigidBody.transform.forward * dashStrength);
             canDash = false;
             StartCoroutine(CoolDown());

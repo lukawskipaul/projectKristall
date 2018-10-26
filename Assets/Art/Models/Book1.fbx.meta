@@ -23,7 +23,9 @@ ModelImporter:
     400016: transform9
     2100000: lambert1
     2300000: Book1
+    2300002: //RootNode
     3300000: Book1
+    3300002: //RootNode
     4300000: Book1
   externalObjects: {}
   materials:
