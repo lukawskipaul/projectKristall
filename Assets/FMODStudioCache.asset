@@ -12,26 +12,48 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114633313835872876}
-  - {fileID: 114127888914042362}
-  - {fileID: 114636614126553054}
-  - {fileID: 114655226565506268}
-  - {fileID: 114232173825831912}
-  - {fileID: 114586857439891234}
-  - {fileID: 114360143885869098}
-  - {fileID: 114155214608973158}
-  - {fileID: 114561270113755398}
+  - {fileID: 114724352418751266}
+  - {fileID: 114112026464519150}
+  - {fileID: 114140355029050518}
+  - {fileID: 114263414268519482}
+  - {fileID: 114067062500541310}
+  - {fileID: 114460423746798640}
+  - {fileID: 114623450015150882}
+  - {fileID: 114333927411220200}
+  - {fileID: 114540878894460996}
+  - {fileID: 114343464029688156}
+  - {fileID: 114483822561215730}
+  - {fileID: 114048421157875260}
+  - {fileID: 114846253886276974}
+  - {fileID: 114031626197731318}
+  - {fileID: 114580165708288098}
+  - {fileID: 114364017173937934}
+  - {fileID: 114170058134649682}
+  - {fileID: 114140824829676204}
+  - {fileID: 114156961874485452}
+  - {fileID: 114209074551194060}
   EditorEvents:
-  - {fileID: 114911310007749914}
-  - {fileID: 114843491250248814}
-  - {fileID: 114194409637829442}
-  - {fileID: 114322487838330430}
-  - {fileID: 114442246083052922}
-  - {fileID: 114053413630395500}
-  - {fileID: 114700837480635740}
-  MasterBankRef: {fileID: 114360143885869098}
-  StringsBankRef: {fileID: 114633313835872876}
-  stringsBankWriteTime: 636765972845700115
+  - {fileID: 114660033178408772}
+  - {fileID: 114500622024479956}
+  - {fileID: 114407412841886708}
+  - {fileID: 114448442674261500}
+  - {fileID: 114354843378443728}
+  - {fileID: 114747074475578712}
+  - {fileID: 114009944588836184}
+  - {fileID: 114230116305326270}
+  - {fileID: 114682194125089028}
+  - {fileID: 114209457767203838}
+  - {fileID: 114593970610484280}
+  - {fileID: 114886270222439738}
+  - {fileID: 114417480333200126}
+  - {fileID: 114874691809141658}
+  - {fileID: 114541575856824212}
+  - {fileID: 114433294328798312}
+  - {fileID: 114278025788981942}
+  - {fileID: 114194580624436086}
+  MasterBankRef: {fileID: 114623450015150882}
+  StringsBankRef: {fileID: 114724352418751266}
+  stringsBankWriteTime: 636766064206427182
   cacheVersion: 2
 --- !u!114 &114003596538919628
 MonoBehaviour:
@@ -52,6 +74,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12474
   Exists: 1
+--- !u!114 &114009944588836184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/footsteps
+  guid: 866088df9e10c842a52f115576aa3463
+  Banks:
+  - {fileID: 114540878894460996}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1996
 --- !u!114 &114010536618487994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +140,44 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1450
+--- !u!114 &114031626197731318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\Crystal
+    break.bank
+  lastModified: 636766064209421290
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 9312
+  Exists: 1
+--- !u!114 &114048421157875260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\cystaal
+    door lock.bank
+  lastModified: 636766064209708019
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 18752
+  Exists: 1
 --- !u!114 &114053413630395500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +200,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1450
+--- !u!114 &114067062500541310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank2.bank
+  lastModified: 636766064207076808
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 10784
+  Exists: 1
 --- !u!114 &114069304168884154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +253,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1278
+  Exists: 1
+--- !u!114 &114112026464519150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\movingboulderbank.bank
+  lastModified: 636766064208221069
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 53760
   Exists: 1
 --- !u!114 &114121675572805680
 MonoBehaviour:
@@ -190,6 +308,43 @@ MonoBehaviour:
   - Name: Desktop
     Value: 53760
   Exists: 1
+--- !u!114 &114140355029050518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank4.bank
+  lastModified: 636766064207824560
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 10816
+  Exists: 1
+--- !u!114 &114140824829676204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\salamander
+    relax.bank
+  lastModified: 636766064212922049
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 67040
+  Exists: 1
 --- !u!114 &114151241316661290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +381,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 11008
   Exists: 1
+--- !u!114 &114156961874485452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\melphant
+    defeated.bank
+  lastModified: 636766064210521005
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 69184
+  Exists: 1
 --- !u!114 &114166178248783614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +417,25 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 10816
+  Exists: 1
+--- !u!114 &114170058134649682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\salamander
+    passive.bank
+  lastModified: 636766064212525046
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 57888
   Exists: 1
 --- !u!114 &114173856228508090
 MonoBehaviour:
@@ -288,6 +481,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2200
+--- !u!114 &114194580624436086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/melphant passive
+  guid: 9eb9223f2472eb45820158276364b9bf
+  Banks:
+  - {fileID: 114209074551194060}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6706
 --- !u!114 &114199514338296118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +583,47 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 50320
+--- !u!114 &114209074551194060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\melphant
+    passive.bank
+  lastModified: 636766064210917622
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 84576
+  Exists: 1
+--- !u!114 &114209457767203838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/crystal door close and lock
+  guid: 352bb887659dfd4f85f3d44158634038
+  Banks:
+  - {fileID: 114048421157875260}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1374
 --- !u!114 &114213148000574954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +664,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 11008
   Exists: 1
+--- !u!114 &114230116305326270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Rock Break Crate
+  guid: c1572ecf7f9929458e4927e48e52c886
+  Banks:
+  - {fileID: 114343464029688156}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &114232173825831912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +726,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1450
+--- !u!114 &114263414268519482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank3.bank
+  lastModified: 636766064207422600
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 11040
+  Exists: 1
+--- !u!114 &114278025788981942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/melphant defeated
+  guid: 2c74ac2b6835c94690babdf0e23c729f
+  Banks:
+  - {fileID: 114156961874485452}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6736
 --- !u!114 &114289795110379226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,6 +927,43 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1450
+--- !u!114 &114333927411220200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank.bank
+  lastModified: 636766064206846948
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 11008
+  Exists: 1
+--- !u!114 &114343464029688156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\Rock
+    Break Crate.bank
+  lastModified: 636766064209024618
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 16064
+  Exists: 1
 --- !u!114 &114344898997784594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,6 +979,28 @@ MonoBehaviour:
   guid: 4cc839afafa91c44a217426957fc0b08
   Banks:
   - {fileID: 114937763564211792}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 50320
+--- !u!114 &114354843378443728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/wind
+  guid: 4cc839afafa91c44a217426957fc0b08
+  Banks:
+  - {fileID: 114460423746798640}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -649,6 +1026,25 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 12474
+  Exists: 1
+--- !u!114 &114364017173937934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\melphant
+    victorious.bank
+  lastModified: 636766064211323962
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 84256
   Exists: 1
 --- !u!114 &114367938350106282
 MonoBehaviour:
@@ -712,6 +1108,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 53280
   Exists: 1
+--- !u!114 &114407412841886708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/lever sound (3)
+  guid: bb1dae754cb4c2489d096d3e98e0e5f6
+  Banks:
+  - {fileID: 114263414268519482}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2200
 --- !u!114 &114416286487554108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,6 +1152,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1450
+--- !u!114 &114417480333200126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/salamander hurt
+  guid: 337857523a13bd47adf0a9bfbb9d4cf2
+  Banks:
+  - {fileID: 114580165708288098}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6937
+--- !u!114 &114433294328798312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/salamander relax
+  guid: 1c9f66be488789468e4362746416aa80
+  Banks:
+  - {fileID: 114140824829676204}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6087
 --- !u!114 &114442246083052922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +1236,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 11040
   Exists: 1
+--- !u!114 &114448442674261500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/lever sound (2)
+  guid: f3060e17a3d1b54ebdfb8f5dde4b0003
+  Banks:
+  - {fileID: 114067062500541310}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1450
 --- !u!114 &114457425433579680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,6 +1297,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 10784
+  Exists: 1
+--- !u!114 &114460423746798640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\windbank.bank
+  lastModified: 636766064208622788
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 558528
   Exists: 1
 --- !u!114 &114462483338140280
 MonoBehaviour:
@@ -873,6 +1375,47 @@ MonoBehaviour:
   - Name: Desktop
     Value: 558528
   Exists: 1
+--- !u!114 &114483822561215730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\melphant
+    aggressive.bank
+  lastModified: 636766064210129541
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 60448
+  Exists: 1
+--- !u!114 &114500622024479956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/lever sound (4)
+  guid: 5c091b21aaaa0b4a869af138798f3f8b
+  Banks:
+  - {fileID: 114140355029050518}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1450
 --- !u!114 &114507746386870668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +1456,46 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 50320
+--- !u!114 &114540878894460996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\footstepsbank.bank
+  lastModified: 636766064206617074
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 7136
+  Exists: 1
+--- !u!114 &114541575856824212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/salamander passive
+  guid: 03ad0392f422184cb5836e9178479352
+  Banks:
+  - {fileID: 114170058134649682}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4556
 --- !u!114 &114543600579460902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,6 +1550,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 53760
   Exists: 1
+--- !u!114 &114580165708288098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\salamander
+    hurt.bank
+  lastModified: 636766064212122481
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 82272
+  Exists: 1
 --- !u!114 &114586857439891234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1604,47 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 53760
+  Exists: 1
+--- !u!114 &114593970610484280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/salamander defeated
+  guid: 5ca5a5d5e4b70c4fba3614ce1d8afbd0
+  Banks:
+  - {fileID: 114846253886276974}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6345
+--- !u!114 &114623450015150882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636766064206377214
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
   Exists: 1
 --- !u!114 &114633313835872876
 MonoBehaviour:
@@ -1097,6 +1740,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 11040
   Exists: 1
+--- !u!114 &114660033178408772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/moving boulder
+  guid: a337c5905810614da667ff22121591e6
+  Banks:
+  - {fileID: 114112026464519150}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1308
 --- !u!114 &114661542510714542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,6 +1798,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 7136
   Exists: 1
+--- !u!114 &114682194125089028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/melphant aggressive
+  guid: 40587e804e2f534cb37189b540759689
+  Banks:
+  - {fileID: 114483822561215730}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5256
 --- !u!114 &114683862681737870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,6 +1944,24 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1278
   Exists: 1
+--- !u!114 &114724352418751266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\FmodLargeTeam1\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636766064206427182
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2294
+  Exists: 1
 --- !u!114 &114736423173657484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,6 +1977,28 @@ MonoBehaviour:
   guid: 5bd5c5f834ae3d4fa0a512d4e0563420
   Banks:
   - {fileID: 114214928824737224}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1450
+--- !u!114 &114747074475578712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/lever sound
+  guid: 5bd5c5f834ae3d4fa0a512d4e0563420
+  Banks:
+  - {fileID: 114333927411220200}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1363,6 +2090,69 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1450
+--- !u!114 &114846253886276974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\chase.churchill\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\salamander
+    defeated.bank
+  lastModified: 636766064211715597
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 74560
+  Exists: 1
+--- !u!114 &114874691809141658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/melphant victorious
+  guid: e9b9e18ced429e41a77f79be3cd606c0
+  Banks:
+  - {fileID: 114364017173937934}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7704
+--- !u!114 &114886270222439738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/crystal break
+  guid: 58b5f55270d0f940a9997147c5fa62da
+  Banks:
+  - {fileID: 114031626197731318}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 624
 --- !u!114 &114887488671017086
 MonoBehaviour:
   m_ObjectHideFlags: 0

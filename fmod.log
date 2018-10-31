@@ -8,7 +8,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000000006BC04B18 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000000006E1C7898 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -28,47 +28,73 @@
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
+[WRN] PluginEffectModel::init                  : Missing DSP plugin 'FMOD Gain'
+[ERR] PostLoad::initPluginEffects              : DSP plugin returned an error, bank will not load properly.
+[WRN] ObjectLookup::get                        : Lookup failed for EventModel: {3f22b99e-7224-45eb-8201-58276364b9bf}
 [LOG] SystemI::createSound                     : filename = Assets\FmodLargeTeam1\Build\Desktop/windbank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 000000006B9270D8 : node = 000000001ED20450
-[LOG] SystemI::createSound                     : add node to async list : head = 000000006BA1F458.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006B9270D8
+[LOG] SystemI::createSound                     : setdata soundi = 000000006E01CB68 : node = 000000001EDF2C60
+[LOG] SystemI::createSound                     : add node to async list : head = 000000006E041AF8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006E01CB68
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\FmodLargeTeam1\Build\Desktop/windbank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 556672
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 1856
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000001ED20568
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000001EDF2D78
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 9500
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='__weak-wind', format=2, channels=2, frequency=48000, lengthbytes=556064, lengthpcm=2906496, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.916386.
 [LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='__weak-wind', format=2, channels=2, frequency=48000, lengthbytes=556064, lengthpcm=2906496, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.916386.
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 8736
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 2080
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000062C7F5FC
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003922F5FC
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFB3BA3DA20
 [LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFB3BA3D9F0
 [LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFB3BA3DAF0
 [LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFB3BA3DBB0
-[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 000000006BCDBB58
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 000000006E088508
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             :     Sample 0/1: name='lever sound', format=2, channels=2, frequency=48000, lengthbytes=8352, lengthpcm=99242, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.681106.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006B9270D8
-[LOG] SoundI::getSubSound                      : sound 000000006B9270D8.  Subsound index 0 / 1
-[LOG] SoundI::release                          : __weak-wind (000000006B9270D8)
-[LOG] SoundI::release                          :     __weak-wind (000000006BC147E8)
-[LOG] SoundI::release                          :     __weak-wind (000000006B926508)
-[LOG] SoundI::release                          :  (000000006B678DB8)
-[LOG] SoundI::release                          :     lever sound (000000006BA88E48)
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006E01CB68
+[LOG] SoundI::getSubSound                      : sound 000000006E01CB68.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = Assets\FmodLargeTeam1\Build\Desktop/windbank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000006E18BEC8 : node = 000000006E166690
+[LOG] SystemI::createSound                     : add node to async list : head = 000000006E041AF8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006E18BEC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\FmodLargeTeam1\Build\Desktop/windbank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 556672
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 1856
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006E1667A8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 9500
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='__weak-wind', format=2, channels=2, frequency=48000, lengthbytes=556064, lengthpcm=2906496, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.916386.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006E18BEC8
+[LOG] SoundI::getSubSound                      : sound 000000006E18BEC8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : __weak-wind (000000006E01CB68)
+[LOG] SoundI::release                          :     __weak-wind (000000006E040148)
+[LOG] SoundI::release                          :     __weak-wind (000000006E01CEC8)
+[LOG] SoundI::release                          : __weak-wind (000000006E18BEC8)
+[LOG] SoundI::release                          :     __weak-wind (000000006E040B08)
+[LOG] SoundI::release                          :     __weak-wind (000000006E01D078)
+[LOG] SoundI::release                          :  (000000004A3D8548)
+[LOG] SoundI::release                          :     lever sound (000000006E040628)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

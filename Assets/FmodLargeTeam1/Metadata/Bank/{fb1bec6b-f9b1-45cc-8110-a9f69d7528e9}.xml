@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="Bank" id="{fb1bec6b-f9b1-45cc-8110-a9f69d7528e9}">
+        <property name="name">
+            <value>melphant passive</value>
+        </property>
+        <relationship name="folder">
+            <destination>{30e40db2-ed79-4176-ae9f-580169c6eb32}</destination>
+        </relationship>
+    </object>
+</objects>

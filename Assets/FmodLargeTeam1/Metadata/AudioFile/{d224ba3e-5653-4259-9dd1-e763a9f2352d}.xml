@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{d224ba3e-5653-4259-9dd1-e763a9f2352d}">
+        <property name="assetPath">
+            <value>salamander_passsive.aiff</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>5.3760090702947849</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{77cecebc-e40b-43df-a799-5fbf089b924f}</destination>
+        </relationship>
+    </object>
+</objects>
