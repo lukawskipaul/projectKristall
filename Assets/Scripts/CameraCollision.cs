@@ -16,6 +16,8 @@ public class CameraCollision : MonoBehaviour
     private float smooth = 5f; //how quickly camera moves towards the player after hitting object
     [SerializeField]
     private float hitPercent = .8f; // 
+    [SerializeField]
+    LayerMask triggerLayer;
 
     private Vector3 cameraDir; //where the camera is moving to (relative to player)
     private Vector3 desiredCameraPosition; //where the camera should be (relative to player)
@@ -25,6 +27,7 @@ public class CameraCollision : MonoBehaviour
     {
         cameraDir = transform.localPosition.normalized; //converting world units to local units (for parent object)
         distance = transform.localPosition.magnitude; //converting world units to local units (for parent object)
+        triggerLayer = ~triggerLayer;
     }
 
     private void Update()
@@ -43,7 +46,7 @@ public class CameraCollision : MonoBehaviour
         RaycastHit hit;
         // if camera hits object between it and player, camera goes as close as it can to player
         // relative between its max distance and its minimum distance
-        if(Physics.Linecast(player.position, desiredCameraPosition, out hit))
+        if (Physics.Linecast(player.position, desiredCameraPosition, out hit, triggerLayer))
         {
             distance = Mathf.Clamp((hit.distance * hitPercent), minDistance, maxDistance);
         }
@@ -54,3 +57,4 @@ public class CameraCollision : MonoBehaviour
         }
     }
 }
+

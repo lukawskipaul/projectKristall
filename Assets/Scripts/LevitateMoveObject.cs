@@ -21,12 +21,22 @@ public class LevitateMoveObject : PowerUp {
     float transfromMoveSpeed = 3f;
 
     [SerializeField]
+    private float teleEnergy = 100f;
+
+    [SerializeField]
+    private float energyDrainRate = 1f;
+
+    [SerializeField]
+    private float energyRechargeRate = 10f;
+
+    [SerializeField]
     GameObject player;
 
     private float xInput;
     private float yInput;
     private float zInput;
     private float maxDist = 5f;
+    
     private Vector3 levDirection;
     private Vector3 startingTransform;
 
@@ -45,19 +55,29 @@ public class LevitateMoveObject : PowerUp {
 
     private void Update()
     {
-        
+
         if (isLevitatingObject == true)
         {
-            if (Vector3.Distance(player.transform.position, levitateTransform.position) > maxDist)
+            if (Vector3.Distance(player.transform.position, levitateTransform.position) > maxDist || teleEnergy <= 0)
             {
                 DropObject(levitatableObj);
+                if (teleEnergy < 0)
+                {
+                    teleEnergy = 0;
+                }
             }
             else
             {
                 LevitateObject(levitatableObj);
             }
-            
+
         }
+        else if (isLevitatingObject == false)
+        {
+            teleEnergy += (energyRechargeRate * Time.deltaTime);
+        }
+        teleEnergy = Mathf.Clamp(teleEnergy, 0, 100);
+        Debug.Log("TeleEnergy: " + teleEnergy);
     }
 
     private void LevitateObject(GameObject objectToLevitate)
@@ -69,6 +89,7 @@ public class LevitateMoveObject : PowerUp {
         OnTeleMovingObject();
         MoveLevitateTransform();
         MoveLevitateObject(objectToLevitate, objectTransfrom);
+        teleEnergy -= (energyDrainRate * Time.deltaTime);
         Debug.Log("LevitatingObj");
     }
 
