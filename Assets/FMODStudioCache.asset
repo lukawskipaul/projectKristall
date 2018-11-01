@@ -13,25 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114724352418751266}
-  - {fileID: 114112026464519150}
-  - {fileID: 114140355029050518}
-  - {fileID: 114263414268519482}
-  - {fileID: 114067062500541310}
-  - {fileID: 114460423746798640}
-  - {fileID: 114623450015150882}
-  - {fileID: 114333927411220200}
-  - {fileID: 114540878894460996}
-  - {fileID: 114343464029688156}
-  - {fileID: 114483822561215730}
-  - {fileID: 114048421157875260}
-  - {fileID: 114846253886276974}
-  - {fileID: 114031626197731318}
-  - {fileID: 114580165708288098}
-  - {fileID: 114364017173937934}
-  - {fileID: 114170058134649682}
-  - {fileID: 114140824829676204}
-  - {fileID: 114156961874485452}
-  - {fileID: 114209074551194060}
+  - {fileID: 114264397287743244}
+  - {fileID: 114238218860229032}
+  - {fileID: 114740638063507986}
+  - {fileID: 114424847550283920}
+  - {fileID: 114860416826145152}
+  - {fileID: 114013526543231874}
+  - {fileID: 114104954951499244}
+  - {fileID: 114600409866060504}
   EditorEvents:
   - {fileID: 114660033178408772}
   - {fileID: 114500622024479956}
@@ -40,20 +29,9 @@ MonoBehaviour:
   - {fileID: 114354843378443728}
   - {fileID: 114747074475578712}
   - {fileID: 114009944588836184}
-  - {fileID: 114230116305326270}
-  - {fileID: 114682194125089028}
-  - {fileID: 114209457767203838}
-  - {fileID: 114593970610484280}
-  - {fileID: 114886270222439738}
-  - {fileID: 114417480333200126}
-  - {fileID: 114874691809141658}
-  - {fileID: 114541575856824212}
-  - {fileID: 114433294328798312}
-  - {fileID: 114278025788981942}
-  - {fileID: 114194580624436086}
-  MasterBankRef: {fileID: 114623450015150882}
+  MasterBankRef: {fileID: 114013526543231874}
   StringsBankRef: {fileID: 114724352418751266}
-  stringsBankWriteTime: 636766064206427182
+  stringsBankWriteTime: 636763299969731756
   cacheVersion: 2
 --- !u!114 &114003596538919628
 MonoBehaviour:
@@ -88,7 +66,7 @@ MonoBehaviour:
   Path: event:/footsteps
   guid: 866088df9e10c842a52f115576aa3463
   Banks:
-  - {fileID: 114540878894460996}
+  - {fileID: 114600409866060504}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -118,6 +96,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1308
+--- !u!114 &114013526543231874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636763299967992772
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12474
+  Exists: 1
 --- !u!114 &114020748912252312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +232,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 11040
+  Exists: 1
+--- !u!114 &114104954951499244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank.bank
+  lastModified: 636763299974199181
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 11008
   Exists: 1
 --- !u!114 &114105789343519600
 MonoBehaviour:
@@ -704,6 +719,24 @@ MonoBehaviour:
   - Name: Desktop
     Value: 10784
   Exists: 1
+--- !u!114 &114238218860229032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank4.bank
+  lastModified: 636763299977827116
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 10816
+  Exists: 1
 --- !u!114 &114262040198539478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +776,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 11040
+  Exists: 1
+--- !u!114 &114264397287743244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\movingboulderbank.bank
+  lastModified: 636763299980475564
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 53760
   Exists: 1
 --- !u!114 &114278025788981942
 MonoBehaviour:
@@ -1000,7 +1051,7 @@ MonoBehaviour:
   Path: event:/wind
   guid: 4cc839afafa91c44a217426957fc0b08
   Banks:
-  - {fileID: 114460423746798640}
+  - {fileID: 114860416826145152}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1122,7 +1173,7 @@ MonoBehaviour:
   Path: event:/lever sound (3)
   guid: bb1dae754cb4c2489d096d3e98e0e5f6
   Banks:
-  - {fileID: 114263414268519482}
+  - {fileID: 114740638063507986}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1174,6 +1225,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 6937
+--- !u!114 &114424847550283920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank2.bank
+  lastModified: 636763299974838838
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 10784
+  Exists: 1
 --- !u!114 &114433294328798312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1319,7 @@ MonoBehaviour:
   Path: event:/lever sound (2)
   guid: f3060e17a3d1b54ebdfb8f5dde4b0003
   Banks:
-  - {fileID: 114067062500541310}
+  - {fileID: 114424847550283920}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1408,7 +1477,7 @@ MonoBehaviour:
   Path: event:/lever sound (4)
   guid: 5c091b21aaaa0b4a869af138798f3f8b
   Banks:
-  - {fileID: 114140355029050518}
+  - {fileID: 114238218860229032}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1627,6 +1696,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 6345
+--- !u!114 &114600409866060504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\footstepsbank.bank
+  lastModified: 636763299971760596
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 7136
+  Exists: 1
 --- !u!114 &114623450015150882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,7 +1841,7 @@ MonoBehaviour:
   Path: event:/moving boulder
   guid: a337c5905810614da667ff22121591e6
   Banks:
-  - {fileID: 114112026464519150}
+  - {fileID: 114264397287743244}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1956,11 +2043,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FmodLargeTeam1\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636766064206427182
+  lastModified: 636763299969731756
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2294
+    Value: 1278
   Exists: 1
 --- !u!114 &114736423173657484
 MonoBehaviour:
@@ -1984,6 +2071,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1450
+--- !u!114 &114740638063507986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\leverbank3.bank
+  lastModified: 636763299976018159
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 11040
+  Exists: 1
 --- !u!114 &114747074475578712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,7 +2103,7 @@ MonoBehaviour:
   Path: event:/lever sound
   guid: 5bd5c5f834ae3d4fa0a512d4e0563420
   Banks:
-  - {fileID: 114333927411220200}
+  - {fileID: 114104954951499244}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2108,6 +2213,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 74560
+  Exists: 1
+--- !u!114 &114860416826145152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Chase\Desktop\Large Team\projectKristall\Assets\FmodLargeTeam1\Build\Desktop\windbank.bank
+  lastModified: 636763299995797434
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 558528
   Exists: 1
 --- !u!114 &114874691809141658
 MonoBehaviour:

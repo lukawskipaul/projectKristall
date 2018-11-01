@@ -2,14 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevitateMoveObject : PowerUp {
     public static event Action TeleMovingObject;
     public static event Action TeleStoppedMovingObject;
 
+
+
     Rigidbody objectRigidBody;
     public GameObject levitatableObj;
     bool isLevitatingObject = false;
+
+    [SerializeField]
+    Slider energySlider;
 
     [SerializeField]
     Transform levitateTransform;
@@ -20,8 +26,10 @@ public class LevitateMoveObject : PowerUp {
     [SerializeField]
     float transfromMoveSpeed = 3f;
 
-    [SerializeField]
     private float teleEnergy = 100f;
+
+    [SerializeField]
+    float maxEnergy = 100f;
 
     [SerializeField]
     private float energyDrainRate = 1f;
@@ -51,6 +59,7 @@ public class LevitateMoveObject : PowerUp {
     private void Start()
     {
         startingTransform = levitateTransform.localPosition;
+        energySlider.value = EnergyPercent();
     }
 
     private void Update()
@@ -76,7 +85,8 @@ public class LevitateMoveObject : PowerUp {
         {
             teleEnergy += (energyRechargeRate * Time.deltaTime);
         }
-        teleEnergy = Mathf.Clamp(teleEnergy, 0, 100);
+        teleEnergy = Mathf.Clamp(teleEnergy, 0, maxEnergy);
+        energySlider.value = EnergyPercent();
         Debug.Log("TeleEnergy: " + teleEnergy);
     }
 
@@ -86,6 +96,9 @@ public class LevitateMoveObject : PowerUp {
         objectRigidBody.useGravity = false;
         objectToLevitate.layer = 9;
         Vector3 objectTransfrom = objectToLevitate.transform.position;
+        objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
+        objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
+        objectRigidBody.angularVelocity = Vector3.zero;
         OnTeleMovingObject();
         MoveLevitateTransform();
         MoveLevitateObject(objectToLevitate, objectTransfrom);
@@ -188,6 +201,11 @@ public class LevitateMoveObject : PowerUp {
     private void ResetLevTransform()
     {
         levitateTransform.localPosition = startingTransform;
+    }
+
+    float EnergyPercent()
+    {
+        return teleEnergy / maxEnergy;
     }
 
     private void OnTeleMovingObject()
