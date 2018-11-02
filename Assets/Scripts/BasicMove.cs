@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicMove : MonoBehaviour
-{
+public class BasicMove : MonoBehaviour {
 
     public float movementSpeed;
     public float rotationSpeed;
@@ -14,13 +13,11 @@ public class BasicMove : MonoBehaviour
     private float VertRotMax = 65f;
     private float mouseX;
     private float mouseY;
-    private bool canMove = true;
+    public bool canMove = true;
     public bool isOnGround = true;
+    public bool isSprinting = false;
     public Rigidbody playerRigidbody;
     private Vector3 vector3;
-
-    [SerializeField]
-    float fallModifier = 2f;
 
     [SerializeField]
     float distance = 2f;
@@ -40,27 +37,29 @@ public class BasicMove : MonoBehaviour
     [SerializeField]
     public float superJumpModifier = 2f;
 
-    // Use this for initialization
-    void Start()
-    {
+	// Use this for initialization
+	void Start () {
         playerRigidbody = GetComponent<Rigidbody>();
-
-    }
+        
+	}
 
     void FixedUpdate()
     {
-
+        if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            isSprinting = false;
+        }
         if (canMove)
         {
             playerRigidbody.detectCollisions = true;
-            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("w") && isOnGround)
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("w"))
             {
-                //Transform test = playerRigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
+                isSprinting = true;
                 playerRigidbody.transform.position += playerRigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
-                //playerRigidbody.MovePosition();
             }
-            else if (Input.GetKey("w"))
+            else if (Input.GetKey("w") && !Input.GetKey(KeyCode.LeftShift))
             {
+                isSprinting = false;
                 playerRigidbody.transform.position += playerRigidbody.transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
             }
             else if (Input.GetKey("s"))
@@ -77,20 +76,18 @@ public class BasicMove : MonoBehaviour
                 playerRigidbody.transform.position -= playerRigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
             }
             Jump();
-            IncreaseFallSpeed();
         }
 
     }
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift) && isOnGround)
         {
             GetComponent<Rigidbody>().AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
-
             isOnGround = false;
         }
-
+            
     }
 
     public void SuperJump()
@@ -99,15 +96,7 @@ public class BasicMove : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * (jumpForce * superJumpModifier), ForceMode.Impulse);
             isOnGround = false;
-        }
-    }
-
-    void IncreaseFallSpeed()
-    {
-        if (playerRigidbody.velocity.y < 0)
-        {
-            playerRigidbody.velocity += Physics.gravity * (fallModifier - 1) * Time.deltaTime;
-        }
+        }        
     }
 
     private void Update()
@@ -132,7 +121,7 @@ public class BasicMove : MonoBehaviour
             //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
             camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
         }
-
+            
     }
 
 

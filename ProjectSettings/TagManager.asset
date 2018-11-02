@@ -9,6 +9,7 @@ TagManager:
   - Hook
   - Hookable
   - LevitatableObject
+  - Breakable
   layers:
   - Default
   - TransparentFX
