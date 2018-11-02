@@ -37,8 +37,11 @@ public class BasicMove : MonoBehaviour {
     [SerializeField]
     public float superJumpModifier = 2f;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    float fallModifier = 2f;
+
+    // Use this for initialization
+    void Start () {
         playerRigidbody = GetComponent<Rigidbody>();
         
 	}
@@ -76,18 +79,20 @@ public class BasicMove : MonoBehaviour {
                 playerRigidbody.transform.position -= playerRigidbody.transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
             }
             Jump();
+            IncreaseFallSpeed();
         }
 
     }
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Input.GetKey(KeyCode.LeftShift) && isOnGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             GetComponent<Rigidbody>().AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
+
             isOnGround = false;
         }
-            
+
     }
 
     public void SuperJump()
@@ -96,32 +101,57 @@ public class BasicMove : MonoBehaviour {
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * (jumpForce * superJumpModifier), ForceMode.Impulse);
             isOnGround = false;
-        }        
+        }
+    }
+
+    void IncreaseFallSpeed()
+    {
+        if (playerRigidbody.velocity.y < 0)
+        {
+            playerRigidbody.velocity += Physics.gravity * (fallModifier - 1) * Time.deltaTime;
+        }
     }
 
     private void Update()
     {
         IsGrounded();
-        if (canMove)
+        //if (canMove)
+        //{
+        //    playerRigidbody.detectCollisions = true;
+        //    rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
+        //    rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
+
+        //    if (rotX < -35f)
+        //    {
+        //        rotX = -35f;
+        //    }
+        //    else if (rotX > 35f)
+        //    {
+        //        rotX = 35f;
+        //    }
+
+        //    transform.rotation = Quaternion.Euler(0, rotY, 0);
+        //    //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+        //    camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+        //}
+
+        playerRigidbody.detectCollisions = true;
+        rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
+        rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
+
+        if (rotX < -35f)
         {
-            playerRigidbody.detectCollisions = true;
-            rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
-            rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
-
-            if (rotX < -35f)
-            {
-                rotX = -35f;
-            }
-            else if (rotX > 35f)
-            {
-                rotX = 35f;
-            }
-
-            transform.rotation = Quaternion.Euler(0, rotY, 0);
-            //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
-            camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+            rotX = -35f;
         }
-            
+        else if (rotX > 35f)
+        {
+            rotX = 35f;
+        }
+
+        transform.rotation = Quaternion.Euler(0, rotY, 0);
+        //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+        camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+
     }
 
 

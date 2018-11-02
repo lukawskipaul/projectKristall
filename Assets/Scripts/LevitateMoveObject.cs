@@ -35,7 +35,7 @@ public class LevitateMoveObject : PowerUp {
     private float energyDrainRate = 1f;
 
     [SerializeField]
-    private float energyRechargeRate = 10f;
+    private float energyRechargeRate = 10f, maxDist = 5f;
 
     [SerializeField]
     GameObject player;
@@ -43,7 +43,6 @@ public class LevitateMoveObject : PowerUp {
     private float xInput;
     private float yInput;
     private float zInput;
-    private float maxDist = 5f;
     
     private Vector3 levDirection;
     private Vector3 startingTransform;
@@ -94,7 +93,7 @@ public class LevitateMoveObject : PowerUp {
     {
         GetObjectRigidBody(objectToLevitate);
         objectRigidBody.useGravity = false;
-        objectToLevitate.layer = 9;
+        objectToLevitate.layer = 11;
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
         objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
