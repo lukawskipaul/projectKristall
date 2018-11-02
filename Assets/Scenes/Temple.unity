@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36360806, g: 0.36762583, b: 0.33982092, a: 1}
+  m_IndirectSpecularColor: {r: 0.36360815, g: 0.36762586, b: 0.33982107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1582,6 +1582,74 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 265733713972310409a9b5130bb9b1b9, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &726491119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 726491120}
+  - component: {fileID: 726491122}
+  - component: {fileID: 726491121}
+  m_Layer: 5
+  m_Name: Crosshair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &726491120
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726491119}
+  m_LocalRotation: {x: -0.075898334, y: -0, z: 2.3283064e-10, w: 0.9971156}
+  m_LocalPosition: {x: 0, y: 0, z: -222.55305}
+  m_LocalScale: {x: 0.50104165, y: 0.50104165, z: 0.50104165}
+  m_Children: []
+  m_Father: {fileID: 1335420699}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -278.99875, y: -108.88696}
+  m_SizeDelta: {x: 5, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &726491121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726491119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3372549}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &726491122
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726491119}
 --- !u!1 &734899737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3159,6 +3227,7 @@ GameObject:
   - component: {fileID: 1335420697}
   - component: {fileID: 1335420696}
   - component: {fileID: 1335420700}
+  - component: {fileID: 1335420701}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3225,7 +3294,8 @@ Transform:
   m_LocalRotation: {x: 0.075898334, y: -0, z: -2.3283064e-10, w: 0.9971156}
   m_LocalPosition: {x: 0.65000653, y: 1.6900024, z: -3.7500024}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 726491120}
   m_Father: {fileID: 1320687578}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 8.706, y: 0, z: 0}
@@ -3248,6 +3318,20 @@ MonoBehaviour:
   triggerLayer:
     serializedVersion: 2
     m_Bits: 4
+--- !u!114 &1335420701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1335420695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8794062fd3f043849b930596c98ab5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  shootCam: {fileID: 1335420698}
 --- !u!1001 &1351462001
 Prefab:
   m_ObjectHideFlags: 0
