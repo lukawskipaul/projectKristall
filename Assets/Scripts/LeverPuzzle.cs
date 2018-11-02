@@ -10,7 +10,22 @@ public class LeverPuzzle : MonoBehaviour
     [HideInInspector]
     public bool correctLever = false;
 
+    [SerializeField]
+    Light[] torchLights;
+
+    [SerializeField]
+    GameObject creature;
+
     int i = 0;
+    public string[] FirstSentences;
+    public string[] SecondSentences;
+
+    private DialogueSystem dialogue;
+
+    public void Start()
+    {
+        dialogue = FindObjectOfType<DialogueSystem>();
+    }
 
     public void CheckLever(GameObject pressedLever)
     {
@@ -21,10 +36,30 @@ public class LeverPuzzle : MonoBehaviour
             Debug.Log("Correct lever pulled");
             i++;
             correctLever = true;
+            if(i == 1)
+            {
+                torchLights[0].enabled = true;
+                
+                
+            }
+            else if(i == 2)
+            {
+                torchLights[1].enabled = true;
+                torchLights[2].enabled = true;
+            }
+            else if(i == 3)
+            {
+                torchLights[3].enabled = true;
+                torchLights[4].enabled = true;
+                torchLights[5].enabled = true;
+            }
             if (i == leverOrder.Length)
             {
                 //What we want to happen when the puzzle is solved goes here
                 Debug.Log("Correct Order!");
+                torchLights[6].enabled = true;
+                dialogue.dialogueLines = SecondSentences;
+                dialogue.ItemInteraction();
                 PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
             }
         }
@@ -32,7 +67,20 @@ public class LeverPuzzle : MonoBehaviour
         {
             i = 0;
             correctLever = false;
+            for(int i = 0; i < torchLights.Length; i++)
+            {
+                torchLights[i].enabled = false;
+                dialogue.dialogueLines = FirstSentences;
+                dialogue.ItemInteraction();
+                creature.SetActive(false);
+            }
         }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        dialogue.OutOfRange();
+        
     }
 
 }

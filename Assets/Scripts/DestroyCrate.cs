@@ -10,16 +10,14 @@ public class DestroyCrate : MonoBehaviour {
     [SerializeField]
     Transform creatureMoveLocation;
 
+    public string[] sentences;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private DialogueSystem dialogueSystem;
+    // Use this for initialization
+    void Start()
+    {
+        dialogueSystem = FindObjectOfType<DialogueSystem>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,6 +28,8 @@ public class DestroyCrate : MonoBehaviour {
             creature.transform.rotation = creatureMoveLocation.rotation;
             PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.levitateMoveObject);
             PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.levitateObject);
+            dialogueSystem.dialogueLines = sentences;
+            dialogueSystem.ItemInteraction();
 
         }
     }

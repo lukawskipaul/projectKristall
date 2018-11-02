@@ -21,6 +21,8 @@ public class DialogueSystem : MonoBehaviour {
 
     public string InteractButton;
 
+
+
 	// Use this for initialization
 	void Start ()
     {
@@ -43,7 +45,7 @@ public class DialogueSystem : MonoBehaviour {
             dialogueActive = true;
             StartCoroutine(StartDialogue());
         }
-        //StartDialogue();
+        StartDialogue();
     }
 
     private IEnumerator StartDialogue()
@@ -73,7 +75,7 @@ public class DialogueSystem : MonoBehaviour {
             while(true)
             {
                 //Can put input required here
-                if(dialogueEnded == false)
+                if(dialogueEnded == false && Input.GetButtonDown(InteractButton))
                 {
                     break;
                 }

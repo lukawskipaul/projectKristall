@@ -79,6 +79,7 @@ ModelImporter:
     3300002: //RootNode
     4300000: pTorus4
     4300002: Braizer2
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -112,7 +113,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 2.5
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
