@@ -60,6 +60,7 @@ public class LeverPuzzle : MonoBehaviour
                 torchLights[6].enabled = true;
                 dialogue.dialogueLines = SecondSentences;
                 dialogue.ItemInteraction();
+                creature.SetActive(false);
                 PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
             }
         }
@@ -72,7 +73,7 @@ public class LeverPuzzle : MonoBehaviour
                 torchLights[i].enabled = false;
                 dialogue.dialogueLines = FirstSentences;
                 dialogue.ItemInteraction();
-                creature.SetActive(false);
+                
             }
         }
     }
