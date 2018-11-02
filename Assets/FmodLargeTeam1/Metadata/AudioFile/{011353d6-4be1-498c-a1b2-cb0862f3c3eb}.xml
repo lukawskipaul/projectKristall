@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{011353d6-4be1-498c-a1b2-cb0862f3c3eb}">
+        <property name="assetPath">
+            <value>__weak-wind.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>60.552</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{77cecebc-e40b-43df-a799-5fbf089b924f}</destination>
+        </relationship>
+    </object>
+</objects>

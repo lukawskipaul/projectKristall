@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{11dc998d-e936-4f2e-b1f6-ce4802a8c6d6}">
+        <property name="assetPath">
+            <value>moving boulder.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>3.9086167800453513</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{77cecebc-e40b-43df-a799-5fbf089b924f}</destination>
+        </relationship>
+    </object>
+</objects>

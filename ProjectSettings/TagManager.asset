@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - ActivatableObject
+  - Moveable
+  - Hook
+  - Hookable
+  - LevitatableObject
+  - Breakable
   layers:
   - Default
   - TransparentFX
@@ -15,9 +20,9 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - LevitatingObj
   - 
   - 
   - 

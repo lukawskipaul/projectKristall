@@ -2,34 +2,79 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushBlock : MonoBehaviour
+public class PushBlock : PowerUp
 {
+    public BasicMove playerMovement;
+    public Rigidbody player;
+    private bool shouldPush = false;
+    private float timeToWait = 1f;
 
-    [SerializeField]
-    Rigidbody rigidbody;
-
-    private void Start()
+    public override string PowerName
     {
-        rigidbody.isKinematic = true;
+        get
+        {
+            return "Push";
+        }
     }
 
-    //Check to see if player is pushing object 
+    //Check to see if object is Moveable
     //check if player has powerup to push object
     //if both are true, player can move object
 
-    //TODO: give player powerup
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F)&& playerMovement.isSprinting && playerMovement.canMove)
+        {
+            //Press f to pay respects <_<
+            playerMovement.canMove = false;
+            shouldPush = true;
+            player.AddRelativeForce(new Vector3(0f, 2f, 0f), ForceMode.Impulse);
+            player.AddRelativeForce(new Vector3(0f, 0f, 8f), ForceMode.Impulse);
+            Debug.Log("YEET YOURSELF");
+            StartCoroutine(HoldPlayerPosition());
+        }
+    }
+
+    IEnumerator HoldPlayerPosition()
+    {
+        float timeWaited = 0f;
+        while(timeWaited < timeToWait)
+        {
+            timeWaited += Time.deltaTime;
+            yield return null;
+        }
+        playerMovement.canMove = true;
+        shouldPush = false;
+        yield return null;
+    }
+
     //TODO: make the player be sprinting
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Moveable")
         {
-            //if(Player.Powerups.Heavyblock && Player.isSprinting)
-            // canPush = true;
-            //checks to see if player has the powerup and is sprinting (static variables)
-            //canPush = true; //HACK
-            if (GameManager.Instance.canPush)
+
+            if (IsActivated && IsUnlocked && shouldPush)
             {
-                rigidbody.isKinematic = false;
+                collision.rigidbody.isKinematic = false;
+                Vector3 direction = collision.transform.position - transform.position;
+                direction.Normalize();
+                collision.rigidbody.AddForce(direction * 12f, ForceMode.Impulse);
+                Debug.Log("Should move block");
+            }
+            else
+            {
+                if(!collision.rigidbody.isKinematic)
+                {
+                    collision.rigidbody.isKinematic = true;
+                }
+            }
+        }
+        if(collision.transform.tag == "Breakable")
+        {
+            if (IsActivated && IsUnlocked && shouldPush)
+            {
+                Destroy(collision.collider.gameObject);
             }
         }
     }
@@ -38,8 +83,13 @@ public class PushBlock : MonoBehaviour
     //this will need to be changed so that the object falls normally instead of just stops
     private void OnCollisionExit(Collision collision)
     {
-        //GameManager.Instance.canPush = false;
-        rigidbody.isKinematic = true;
+
+        if (collision.transform.tag == "Moveable")
+        {
+            //collision.rigidbody.isKinematic = true;
+        }
     }
+
+
 }
 
