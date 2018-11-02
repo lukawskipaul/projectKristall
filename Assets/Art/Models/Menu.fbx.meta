@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: 6204bc1ec21d42544b72bdfe596b6e1c
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Altar1
+    100002: Book1
+    100004: Braizer1
+    100006: Braizer3
+    100008: Braizer4
+    100010: Candle1
+    100012: Candle3
+    100014: Candle4
+    100016: Candle5
+    100018: Candle6
+    100020: Candle7
+    100022: Candle8
+    100024: candle8
+    100026: Candle9
+    100028: candle9
+    100030: Cloth
+    100032: Cloth 1
+    100034: Cloth1
+    100036: Crystal
+    100038: CrystalDoor
+    100040: DoorA
+    100042: DoorB
+    100044: DoorFrame
+    100046: DoorFrame 1
+    100048: Ground_of_Temple
+    100050: //RootNode
+    100052: persp1
+    100054: transform1
+    100056: transform10
+    100058: transform11
+    100060: transform12
+    100062: transform13
+    100064: transform14
+    100066: transform15
+    100068: transform16
+    100070: transform17
+    100072: transform18
+    100074: transform2
+    100076: transform3
+    100078: transform4
+    100080: transform5
+    100082: transform6
+    100084: transform7
+    100086: transform8
+    100088: transform9
+    100090: Walls
+    400000: Altar1
+    400002: Book1
+    400004: Braizer1
+    400006: Braizer3
+    400008: Braizer4
+    400010: Candle1
+    400012: Candle3
+    400014: Candle4
+    400016: Candle5
+    400018: Candle6
+    400020: Candle7
+    400022: Candle8
+    400024: candle8
+    400026: Candle9
+    400028: candle9
+    400030: Cloth
+    400032: Cloth 1
+    400034: Cloth1
+    400036: Crystal
+    400038: CrystalDoor
+    400040: DoorA
+    400042: DoorB
+    400044: DoorFrame
+    400046: DoorFrame 1
+    400048: Ground_of_Temple
+    400050: //RootNode
+    400052: persp1
+    400054: transform1
+    400056: transform10
+    400058: transform11
+    400060: transform12
+    400062: transform13
+    400064: transform14
+    400066: transform15
+    400068: transform16
+    400070: transform17
+    400072: transform18
+    400074: transform2
+    400076: transform3
+    400078: transform4
+    400080: transform5
+    400082: transform6
+    400084: transform7
+    400086: transform8
+    400088: transform9
+    400090: Walls
+    2000000: persp1
+    2100000: lambert9
+    2100002: lambert10
+    2100004: lambert4
+    2100006: aiStandardSurface3
+    2100008: aiStandardSurface5
+    2100010: aiStandardSurface2
+    2100012: aiStandardSurface6
+    2100014: lambert7
+    2100016: lambert3
+    2100018: lambert8
+    2100020: lambert6
+    2300000: Braizer4
+    2300002: Cloth
+    2300004: Crystal
+    2300006: DoorFrame
+    2300008: Ground_of_Temple
+    2300010: Walls
+    3300000: Braizer4
+    3300002: Cloth
+    3300004: Crystal
+    3300006: DoorFrame
+    3300008: Ground_of_Temple
+    3300010: Walls
+    4300000: Crystal
+    4300002: Ground_of_Temple
+    4300004: Walls
+    4300006: Cloth
+    4300008: DoorFrame
+    4300010: Braizer4
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
