@@ -6,6 +6,9 @@ public class PushBlock : PowerUp
 {
     public BasicMove playerMovement;
     public Rigidbody player;
+    public float verticalForceApplied = 10f;
+    public float forwardForceApplied = 30f;
+    public float forceAppliedToRock = 20f;
     private bool shouldPush = false;
     private float timeToWait = 1f;
 
@@ -28,8 +31,8 @@ public class PushBlock : PowerUp
             //Press f to pay respects <_<
             playerMovement.canMove = false;
             shouldPush = true;
-            player.AddRelativeForce(new Vector3(0f, 2f, 0f), ForceMode.Impulse);
-            player.AddRelativeForce(new Vector3(0f, 0f, 8f), ForceMode.Impulse);
+            player.AddRelativeForce(new Vector3(0f, verticalForceApplied, 0f), ForceMode.Impulse);
+            player.AddRelativeForce(new Vector3(0f, 0f, forwardForceApplied), ForceMode.Impulse);
             Debug.Log("YEET YOURSELF");
             StartCoroutine(HoldPlayerPosition());
         }
@@ -53,13 +56,13 @@ public class PushBlock : PowerUp
     {
         if (collision.transform.tag == "Moveable")
         {
-
+            Debug.Log("Rock hit");
             if (IsActivated && IsUnlocked && shouldPush)
             {
                 collision.rigidbody.isKinematic = false;
                 Vector3 direction = collision.transform.position - transform.position;
                 direction.Normalize();
-                collision.rigidbody.AddForce(direction * 12f, ForceMode.Impulse);
+                collision.rigidbody.AddForce(direction * forceAppliedToRock, ForceMode.Impulse);
                 Debug.Log("Should move block");
             }
             else

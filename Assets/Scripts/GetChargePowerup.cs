@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GetChargePowerup : MonoBehaviour
 {
-
+    public PowerupManager thisInstance;
     private void OnTriggerEnter(Collider other)
     {
-        PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
+        thisInstance.UnlockPowerup(PowerupManager.Instance.pushBlock);
         Debug.Log("PushBlock Activated");
         Destroy(this);
     }
