@@ -12,7 +12,7 @@ public abstract class PowerUp : MonoBehaviour {
     {
         get
         {
-            return "PowerUp";
+            return powerName;
         }
     }
 
@@ -40,5 +40,15 @@ public abstract class PowerUp : MonoBehaviour {
         {
             isUnlocked = value;
         }
+    }
+
+    public virtual void UsePower()
+    {
+
+    }
+
+    public virtual void UsePower(GameObject gameObject)
+    {
+
     }
 }

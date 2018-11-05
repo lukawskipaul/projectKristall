@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{a2876b10-9fa3-4790-a53e-61f7a2f90e85}">
+        <property name="assetPath">
+            <value>melphant_defeated.aiff</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>7.03671201814059</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{77cecebc-e40b-43df-a799-5fbf089b924f}</destination>
+        </relationship>
+    </object>
+</objects>

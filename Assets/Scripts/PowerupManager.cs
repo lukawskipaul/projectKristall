@@ -12,10 +12,15 @@ public class PowerupManager : MonoBehaviour {
     GameObject Player;
 
     public PushBlock pushBlock;
+    public LevitateObjectPowerUp levitateObject;
+    public HoverPowerup hoverPowerup;
+    public LevitateMoveObject levitateMoveObject;
+    public AirDashPower airDash;
+    public SuperJump superJump;
 
     List<PowerUp> powerUpsList = new List<PowerUp>();
 
-    PowerUp currentPower;
+    public PowerUp currentPower;
 
     private void Awake()
     {
@@ -32,13 +37,17 @@ public class PowerupManager : MonoBehaviour {
 
     private void Start()
     {
-        pushBlock = Player.GetComponent<PushBlock>();
         powerUpsList.Add(pushBlock);
+        powerUpsList.Add(levitateObject);
+        powerUpsList.Add(levitateMoveObject);
+        powerUpsList.Add(airDash);
+        powerUpsList.Add(superJump);
     }
 
     private void Update()
     {
         SelectPowerup();
+        HandleInput();
     }
 
     public void ActivatePower(PowerUp powerUp)
@@ -75,11 +84,66 @@ public class PowerupManager : MonoBehaviour {
             ActivatePower(pushBlock);
 
         }
+        if (Input.GetButtonDown("Powerup2"))
+        {
+            ActivatePower(levitateObject);
+
+        }
+        if (Input.GetButtonDown("Powerup3"))
+        {
+            ActivatePower(superJump);
+
+        }
+        if (Input.GetButtonDown("Powerup4"))
+        {
+            ActivatePower(levitateMoveObject);
+
+        }
+        if (Input.GetButtonDown("Powerup5"))
+        {
+            ActivatePower(airDash);
+
+        }
+    }
+
+    void HandleInput()
+    {
+
+        if (Input.GetButtonDown("UsePower"))
+        {
+            if (currentPower == levitateObject)
+            {
+                currentPower.UsePower(levitateObject.levitatableObj);
+            }
+            if (currentPower == hoverPowerup)
+            {
+                currentPower.UsePower();
+            }
+            if (currentPower == levitateMoveObject)
+            {
+                currentPower.UsePower(levitateMoveObject.levitatableObj);
+            }
+            if (currentPower == airDash)
+            {
+                currentPower.UsePower();
+            }
+        }
+
+    }
+
+    public void UnlockAll()
+    {
+        foreach (PowerUp power in powerUpsList)
+        {
+            UnlockPowerup(power);
+        }
     }
 
     public void UnlockPowerup(PowerUp powerUp)
     {
         powerUp.IsUnlocked = true;
     }
+
+    
 
 }
