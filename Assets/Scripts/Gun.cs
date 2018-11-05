@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour {
     public float fireRate = 15f;
 
     public Camera shootCam;
-    //public ParticleSystem muzzleFlash;
+    public ParticleSystem muzzleFlash;
     //public GameObject impactEffect;
 
     private float nectTimeTofire = 0f; 
@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour {
 
     void Shoot()
     {
-        //muzzleFlash.Play(); 
+        muzzleFlash.Play(); 
         RaycastHit hit;
 
         if(Physics.Raycast(shootCam.transform.position, shootCam.transform.forward, out hit, range))
