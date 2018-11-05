@@ -12,19 +12,22 @@ public class LevitateMoveObject : PowerUp {
 
     Rigidbody objectRigidBody;
     public GameObject levitatableObj;
+    GameObject levitatingObj;
     bool isLevitatingObject = false;
+    bool isRotating = false;
+    bool wasLevitating = false;
 
     [SerializeField]
     Slider energySlider;
 
     [SerializeField]
-    Transform levitateTransform;
+    Transform levitateTransform, MinDistRayTransform;
 
     [SerializeField]
     float levitateFollowSpeed = 3f;
 
     [SerializeField]
-    float transfromMoveSpeed = 3f;
+    float transfromMoveSpeed = 3f, rotationAngleSnap = 15f;
 
     private float teleEnergy = 100f;
 
@@ -35,10 +38,13 @@ public class LevitateMoveObject : PowerUp {
     private float energyDrainRate = 1f;
 
     [SerializeField]
-    private float energyRechargeRate = 10f, maxDist = 5f;
+    private float energyRechargeRate = 10f, maxDist = 5f, minDist = 1f;
 
     [SerializeField]
     GameObject player;
+
+    [SerializeField]
+    LayerMask levitatingObjLayer;
 
     private float xInput;
     private float yInput;
@@ -66,7 +72,7 @@ public class LevitateMoveObject : PowerUp {
 
         if (isLevitatingObject == true)
         {
-            if (Vector3.Distance(player.transform.position, levitateTransform.position) > maxDist || teleEnergy <= 0)
+            if (Vector3.Distance(player.transform.position, levitatingObj.transform.position) > maxDist || teleEnergy <= 0)
             {
                 DropObject(levitatableObj);
                 if (teleEnergy < 0)
@@ -76,6 +82,17 @@ public class LevitateMoveObject : PowerUp {
             }
             else
             {
+                if (Input.GetButtonDown("ToggleAlternateAbility"))
+                {
+                    if (isRotating)
+                    {
+                        isRotating = false;
+                    }
+                    else
+                    {
+                        isRotating = true;
+                    }
+                }
                 LevitateObject(levitatableObj);
             }
 
@@ -91,16 +108,29 @@ public class LevitateMoveObject : PowerUp {
 
     private void LevitateObject(GameObject objectToLevitate)
     {
-        GetObjectRigidBody(objectToLevitate);
-        objectRigidBody.useGravity = false;
-        objectToLevitate.layer = 11;
+        if (!wasLevitating)
+        {
+            GetObjectRigidBody(objectToLevitate);
+            objectRigidBody.useGravity = false;
+            objectToLevitate.layer = 11;
+            objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
+            objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
+            objectRigidBody.angularVelocity = Vector3.zero;
+            wasLevitating = true;
+            levitatingObj = objectToLevitate;
+        }
         Vector3 objectTransfrom = objectToLevitate.transform.position;
-        objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
-        objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
-        objectRigidBody.angularVelocity = Vector3.zero;
         OnTeleMovingObject();
-        MoveLevitateTransform();
-        MoveLevitateObject(objectToLevitate, objectTransfrom);
+        if (isRotating)
+        {
+            RotateObject();
+        }
+        else
+        {
+            MoveLevitateTransform();
+            MoveLevitateObject(objectToLevitate, objectTransfrom);           
+        }
+        
         teleEnergy -= (energyDrainRate * Time.deltaTime);
         Debug.Log("LevitatingObj");
     }
@@ -113,8 +143,8 @@ public class LevitateMoveObject : PowerUp {
         }
         catch (System.Exception)
         {
-            Debug.Log("No rigidbody");
-            throw;
+            
+            throw new UnityException("No rigidbody!");
         }
     }
 
@@ -126,14 +156,52 @@ public class LevitateMoveObject : PowerUp {
 
     private void MoveLevitateTransform()
     {
-        Transform teleTransform = gameObject.transform;
-        xInput = Input.GetAxis("Mouse X");
+        xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Mouse Y");
         zInput = Input.GetAxis("levZ");
 
-        levDirection = new Vector3(xInput, yInput, zInput);
+
+        if (Physics.Raycast(MinDistRayTransform.position, Vector3.forward, minDist, levitatingObjLayer))
+        {
+            levDirection = new Vector3(xInput, yInput, levitatableObj.transform.position.z);
+        }
+        else
+        {
+            levDirection = new Vector3(xInput, yInput, zInput);
+        }
 
         levitateTransform.Translate(levDirection * transfromMoveSpeed * Time.deltaTime);
+    }
+
+    private void RotateObject()
+    {
+        if (Input.GetButtonDown("Vertical"))
+        {
+
+
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), rotationAngleSnap);
+            }
+            else if (Input.GetAxis("Vertical") < 0)
+            {
+                levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), -rotationAngleSnap);
+            }
+        }
+
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), -rotationAngleSnap);
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), rotationAngleSnap);
+            }
+        }
+        
+
     }
 
     private void DropObject(GameObject objectToDrop)
@@ -144,13 +212,15 @@ public class LevitateMoveObject : PowerUp {
         }
         catch (System.Exception)
         {
-            Debug.Log("No rigidbody");
-            throw;
+            throw new UnityException("No rigidbody!");
         }
         objectToDrop.layer = 0;
         isLevitatingObject = false;
+        isRotating = false;
         objectRigidBody.useGravity = true;
         ResetLevTransform();
+        levitatingObj = null;
+        wasLevitating = false;
         OnTeleStoppedMovingObject();
     }
 
@@ -167,6 +237,7 @@ public class LevitateMoveObject : PowerUp {
                 else if (!isLevitatingObject)
                 {
                     isLevitatingObject = true;
+                    levitatingObj = objToLevitate;
                 }
 
             }
