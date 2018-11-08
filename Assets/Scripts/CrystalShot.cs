@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CrystalShot : MonoBehaviour {
 
-
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(this.gameObject);
+        Debug.Log("Collide");
     }
 }

@@ -13,7 +13,7 @@ public class Gun : MonoBehaviour {
     Rigidbody crystalShot;
 
     [SerializeField]
-    Transform fireTransform, cameraRigTransform;
+    Transform fireTransform;
 
     [SerializeField]
     float crystalSpeed;
@@ -21,10 +21,11 @@ public class Gun : MonoBehaviour {
     //public ParticleSystem muzzleFlash;
     //public GameObject impactEffect;
 
-    private float nectTimeTofire = 0f; 
+    private float nectTimeTofire = 0f;
+
 
     // Update is called once per frame
-	void Update () {
+    void Update () {
 		if(InputManager.BButton() && Time.time >= nectTimeTofire)
         {
             nectTimeTofire = Time.time + 1f / fireRate; //The greater the fire rate, the less time between shots
