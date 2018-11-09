@@ -123,7 +123,7 @@ public class LevitateMoveObject : PowerUp {
             GetObjectRigidBody(objectToLevitate);
             objectRigidBody.useGravity = false;
             objectToLevitate.layer = 11;
-            objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
+            //objectRigidBody.rotation = Quaternion.Euler(0, 0, 0);
             objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
             objectRigidBody.angularVelocity = Vector3.zero;
             wasLevitating = true;
