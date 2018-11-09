@@ -16,12 +16,13 @@ public class LevitateMoveObject : PowerUp {
     bool isLevitatingObject = false;
     bool isRotating = false;
     bool wasLevitating = false;
+    bool isPulling = false;
 
     [SerializeField]
     Slider energySlider;
 
     [SerializeField]
-    Transform levitateTransform, MinDistRayTransform;
+    Transform levitateTransform, MinDistRayTransform, levitatePullTransform;
 
     [SerializeField]
     float levitateFollowSpeed = 3f;
@@ -57,7 +58,7 @@ public class LevitateMoveObject : PowerUp {
     {
         get
         {
-            return "Levitate Object";
+            return "Telekinesis";
         }
     }
 
@@ -69,16 +70,20 @@ public class LevitateMoveObject : PowerUp {
 
     private void Update()
     {
-
+        Debug.Log(levitatableObj.name);
         if (isLevitatingObject == true)
         {
             if (Vector3.Distance(player.transform.position, levitatingObj.transform.position) > maxDist || teleEnergy <= 0)
             {
-                DropObject(levitatableObj);
-                if (teleEnergy < 0)
+                if (!isPulling)
                 {
-                    teleEnergy = 0;
+                    DropObject(levitatableObj);
                 }
+
+            }
+            else if (wasLevitating == false || teleEnergy > 0)
+            {
+                LevitateObject(levitatableObj);
             }
             else
             {
@@ -118,7 +123,7 @@ public class LevitateMoveObject : PowerUp {
             objectRigidBody.angularVelocity = Vector3.zero;
             wasLevitating = true;
             levitatingObj = objectToLevitate;
-        }
+        }        
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         OnTeleMovingObject();
         if (isRotating)
@@ -237,6 +242,7 @@ public class LevitateMoveObject : PowerUp {
                 else if (!isLevitatingObject)
                 {
                     isLevitatingObject = true;
+                    isPulling = true;
                     levitatingObj = objToLevitate;
                 }
 
@@ -249,7 +255,7 @@ public class LevitateMoveObject : PowerUp {
 
     }
 
-    private void SetLevitatableObject(GameObject gameObject)
+    public void SetLevitatableObject(GameObject gameObject)
     {
         if (!isLevitatingObject)
         {

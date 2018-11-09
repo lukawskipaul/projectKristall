@@ -6,7 +6,11 @@ public class CrystalShot : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(this.gameObject);
-        Debug.Log("Collide");
+        //Destroy(this.gameObject);
+        
+        if (collision.gameObject.tag == "LevitatableObject")
+        {
+            PowerupManager.Instance.levitateMoveObject.SetLevitatableObject(collision.gameObject);
+        }
     }
 }
