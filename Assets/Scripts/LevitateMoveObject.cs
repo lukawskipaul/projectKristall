@@ -22,7 +22,7 @@ public class LevitateMoveObject : PowerUp {
     Slider energySlider;
 
     [SerializeField]
-    Transform levitateTransform, MinDistRayTransform, levitatePullTransform;
+    Transform levitateTransform, MinDistRayTransform;
 
     [SerializeField]
     float levitateFollowSpeed = 3f;
@@ -70,20 +70,25 @@ public class LevitateMoveObject : PowerUp {
 
     private void Update()
     {
-        Debug.Log(levitatableObj.name);
+        Debug.Log(isPulling);
         if (isLevitatingObject == true)
         {
             if (Vector3.Distance(player.transform.position, levitatingObj.transform.position) > maxDist || teleEnergy <= 0)
             {
-                if (!isPulling)
+                if (isPulling && teleEnergy > 0)
+                {
+                    MoveLevitateObject(levitatableObj, new Vector3(levitatableObj.transform.position.x, levitatableObj.transform.position.y, levitatableObj.transform.position.z));
+                    if (Vector3.Distance(player.transform.position, levitatingObj.transform.position) < maxDist)
+                    {
+                        isPulling = false;
+                    }
+                    
+                }
+                else
                 {
                     DropObject(levitatableObj);
                 }
 
-            }
-            else if (wasLevitating == false || teleEnergy > 0)
-            {
-                LevitateObject(levitatableObj);
             }
             else
             {
@@ -99,6 +104,7 @@ public class LevitateMoveObject : PowerUp {
                     }
                 }
                 LevitateObject(levitatableObj);
+                isPulling = false;
             }
 
         }
@@ -108,7 +114,6 @@ public class LevitateMoveObject : PowerUp {
         }
         teleEnergy = Mathf.Clamp(teleEnergy, 0, maxEnergy);
         energySlider.value = EnergyPercent();
-        Debug.Log("TeleEnergy: " + teleEnergy);
     }
 
     private void LevitateObject(GameObject objectToLevitate)
