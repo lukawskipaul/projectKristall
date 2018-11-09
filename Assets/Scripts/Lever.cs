@@ -11,16 +11,15 @@ public class Lever : MonoBehaviour, IActivatable {
     LeverPuzzle leverPuzzle;
 
     Animator anim;
-    [FMODUnity.EventRef]
-    FMOD.Studio.EventInstance leverPullSound;
+    private AudioSource leverPullSound; //Declaring the name lever pull sound
 
-   
+
     private bool isLeverPulled = false;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        leverPullSound = FMODUnity.RuntimeManager.CreateInstance("event:/lever sound (3)");
+        leverPullSound = GetComponent<AudioSource>(); //Is the leberpullsound audio source
 
     }
 
@@ -45,7 +44,7 @@ public class Lever : MonoBehaviour, IActivatable {
     {
         // whatever we want to happen
         leverPuzzle.CheckLever(this.gameObject);
-        leverPullSound.start();
+        leverPullSound.Play();
         if (isLeverPulled)
         {
             anim.SetBool("IsUp", true);
