@@ -8,13 +8,24 @@ public class Gun : MonoBehaviour {
     public float fireRate = 15f;
 
     public Camera shootCam;
-    public ParticleSystem muzzleFlash;
+
+    [SerializeField]
+    Rigidbody crystalShot;
+
+    [SerializeField]
+    Transform fireTransform;
+
+    [SerializeField]
+    float crystalSpeed;
+
+    //public ParticleSystem muzzleFlash;
     //public GameObject impactEffect;
 
-    private float nectTimeTofire = 0f; 
+    private float nectTimeTofire = 0f;
+
 
     // Update is called once per frame
-	void Update () {
+    void Update () {
 		if(InputManager.BButton() && Time.time >= nectTimeTofire)
         {
             nectTimeTofire = Time.time + 1f / fireRate; //The greater the fire rate, the less time between shots
@@ -24,26 +35,29 @@ public class Gun : MonoBehaviour {
 
     void Shoot()
     {
-        muzzleFlash.Play(); 
-        RaycastHit hit;
+        //muzzleFlash.Play(); 
+        //RaycastHit hit;
 
-        if(Physics.Raycast(shootCam.transform.position, shootCam.transform.forward, out hit, range))
-        {
-            Debug.Log(hit.transform.name);
+        //if(Physics.Raycast(shootCam.transform.position, shootCam.transform.forward, out hit, range))
+        //{
+        //    Debug.Log(hit.transform.name);
 
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                target.TakeDamage(damage);
-            }
+        //    Target target = hit.transform.GetComponent<Target>();
+        //    if (target != null)
+        //    {
+        //        target.TakeDamage(damage);
+        //    }
 
-           if (hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
+        //   if (hit.rigidbody != null)
+        //    {
+        //        hit.rigidbody.AddForce(-hit.normal * impactForce);
+        //    }
 
-            //GameObject impactGameObj = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            //Destroy(impactGameObj, 1.5f);
-        }
+        //    //GameObject impactGameObj = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        //    //Destroy(impactGameObj, 1.5f);
+        //}
+
+        Rigidbody cyrstalShotInstance = Instantiate(crystalShot, fireTransform.position, fireTransform.rotation) as Rigidbody;
+        cyrstalShotInstance.velocity = crystalSpeed * fireTransform.forward;
     }
 }
