@@ -11,7 +11,7 @@ public class Lever : MonoBehaviour, IActivatable {
     LeverPuzzle leverPuzzle;
 
     Animator anim;
-    private AudioSource leverPullSound; //Declaring the name lever pull sound
+    private AudioSource leverPullSound; //Declaring the AudioSource named lever pull sound
 
 
     private bool isLeverPulled = false;
@@ -19,7 +19,7 @@ public class Lever : MonoBehaviour, IActivatable {
     private void Start()
     {
         anim = GetComponent<Animator>();
-        leverPullSound = GetComponent<AudioSource>(); //Is the leberpullsound audio source
+        leverPullSound = GetComponent<AudioSource>(); //Is the leverpullsound audio source
 
     }
 
@@ -44,7 +44,7 @@ public class Lever : MonoBehaviour, IActivatable {
     {
         // whatever we want to happen
         leverPuzzle.CheckLever(this.gameObject);
-        leverPullSound.Play();
+        leverPullSound.Play(); // PLay Sound here
         if (isLeverPulled)
         {
             anim.SetBool("IsUp", true);
@@ -56,7 +56,6 @@ public class Lever : MonoBehaviour, IActivatable {
             isLeverPulled = true;
         }
 
-        Debug.Log("Lever Activated");  // just for testing
     }
 
     IEnumerator AnimationWait()
