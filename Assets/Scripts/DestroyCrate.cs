@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyCrate : MonoBehaviour {
+public class DestroyCrate : MonoBehaviour, IActivatable
+{
+         [SerializeField]
+    string nameText;
 
     [SerializeField]
     GameObject crate, rock, creature;
@@ -10,10 +13,28 @@ public class DestroyCrate : MonoBehaviour {
     [SerializeField]
     Transform creatureMoveLocation;
 
+
+    [SerializeField]
+    public CrateBreaking crateBreaking;
+
     public string[] sentences;
 
     private DialogueSystem dialogueSystem;
     // Use this for initialization
+
+    private AudioSource cratebreakSound;
+
+    private bool isCrateBroken = false;
+
+
+    public string NameText
+    {
+        get
+        {
+            return nameText;
+        }
+    }
+
     void Start()
     {
         dialogueSystem = FindObjectOfType<DialogueSystem>();
@@ -32,5 +53,26 @@ public class DestroyCrate : MonoBehaviour {
             dialogueSystem.ItemInteraction();
 
         }
+        public void DoActivate()
+        {
+            // whatever we want to happen
+            crateBreaking.crate(this.gameObject);
+            cratebreakSound.Play(); // PLay Sound here
+            if (isCrateBroken)
+            {
+                anim.SetBool("IsBroken", true);
+                iscrateBreaking = false;
+            }
+            if (!iscrateBreaking)
+            {
+                anim.SetBool("IsBroken", false);
+                iscrateBreaking = true;
+            }
+        }
+        }
+
+    public void DoActivate()
+    {
+        throw new System.NotImplementedException();
     }
 }
