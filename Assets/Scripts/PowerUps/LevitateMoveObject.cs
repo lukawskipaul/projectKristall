@@ -18,6 +18,10 @@ public class LevitateMoveObject : PowerUp
     bool isRotating = false;
     bool wasLevitating = false;
     bool isPulling = false;
+    bool canRotate;
+
+    CheckRotation checkRotation;
+    MeshCollider rotationCheckCollider;
 
     [SerializeField]
     Slider energySlider;
@@ -64,7 +68,7 @@ public class LevitateMoveObject : PowerUp
     }
 
     private void Start()
-    {
+    {      
         startingTransform = levitateTransform.localPosition;
         energySlider.value = EnergyPercent();
     }
@@ -128,12 +132,17 @@ public class LevitateMoveObject : PowerUp
             objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
             objectRigidBody.angularVelocity = Vector3.zero;
             wasLevitating = true;
+            checkRotation = objectToLevitate.GetComponentInChildren<CheckRotation>(); //Each LevitatableObject will have a child that contains a CheckRotation script and a BoxCollider
+            checkRotation.enabled = true;
+            rotationCheckCollider = objectToLevitate.GetComponentInChildren<MeshCollider>();
+            //checkRotation.RotationCollision += IsRotationCollision; //Subscribe to CheckRotation Events
+            //checkRotation.RotationCollisionExit += NoRotationCollision;
             levitatingObj = objectToLevitate;
         }
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         OnTeleMovingObject();
         if (isRotating)
-        {
+        {           
             RotateObject();
         }
         else
@@ -171,31 +180,50 @@ public class LevitateMoveObject : PowerUp
         yInput = Input.GetAxis("Mouse Y");
         zInput = Input.GetAxis("levZ");
 
-
-        if (Physics.Raycast(MinDistRayTransform.position, Vector3.forward, minDist, levitatingObjLayer))
-        {
-            levDirection = new Vector3(xInput, yInput, levitatableObj.transform.position.z);
-        }
-        else
-        {
-            levDirection = new Vector3(xInput, yInput, zInput);
-        }
-
+        //Checks minimum idstance but needs work
+        //if (Physics.Raycast(MinDistRayTransform.position, Vector3.forward, minDist, levitatingObjLayer))
+        //{
+        //    levDirection = new Vector3(xInput, yInput, levitatableObj.transform.position.z);
+        //}
+        //else
+        //{
+        //    levDirection = new Vector3(xInput, yInput, zInput);
+        //}
+        levDirection = new Vector3(xInput, yInput, zInput);
         levitateTransform.Translate(levDirection * transfromMoveSpeed * Time.deltaTime);
     }
 
     private void RotateObject()
-    {
+    {       
         if (Input.GetButtonDown("Vertical"))
         {
 
 
             if (Input.GetAxis("Vertical") > 0)
             {
+                //rotationCheckCollider.transform.RotateAround(rotationCheckCollider.transform.position, new Vector3(1, 0, 0), rotationAngleSnap); //Rotates RotationCheckCollider which will determine if there is a collision or not
+                //if (!checkRotation.WillCollide())
+                //{
+                //    levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), rotationAngleSnap);
+                //}
+                //else
+                //{
+                //    rotationCheckCollider.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), -rotationAngleSnap); //Rotates RotationCheckCollider back if there was a collision
+                //}
                 levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), rotationAngleSnap);
+
             }
             else if (Input.GetAxis("Vertical") < 0)
             {
+                //rotationCheckCollider.transform.RotateAround(rotationCheckCollider.transform.position, new Vector3(1, 0, 0), -rotationAngleSnap);
+                //if (!checkRotation.WillCollide())
+                //{
+                //    levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), -rotationAngleSnap);
+                //}
+                //else
+                //{
+                //    rotationCheckCollider.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), rotationAngleSnap);
+                //}
                 levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(1, 0, 0), -rotationAngleSnap);
             }
         }
@@ -204,12 +232,36 @@ public class LevitateMoveObject : PowerUp
         {
             if (Input.GetAxis("Horizontal") > 0)
             {
+                //rotationCheckCollider.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), -rotationAngleSnap);
+
+                //if (!checkRotation.WillCollide())
+                //{
+                //    levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), -rotationAngleSnap);
+                //}
+                //else
+                //{
+                //    rotationCheckCollider.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), rotationAngleSnap);
+                //}
                 levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), -rotationAngleSnap);
             }
             else if (Input.GetAxis("Horizontal") < 0)
             {
+                //rotationCheckCollider.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), rotationAngleSnap);
+
+                //if (!checkRotation.WillCollide())
+                //{
+                //    levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), rotationAngleSnap);
+                //}
+                //else
+                //{
+                //    rotationCheckCollider.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), -rotationAngleSnap);
+                //}
                 levitatableObj.transform.RotateAround(levitatableObj.transform.position, new Vector3(0, 1, 0), rotationAngleSnap);
             }
+        }
+        if (Input.GetButtonDown("ResetRotate"))
+        {
+            levitatableObj.transform.rotation = Quaternion.identity;
         }
 
 
@@ -280,6 +332,16 @@ public class LevitateMoveObject : PowerUp
         levitatableObj = null;
     }
 
+    private void IsRotationCollision()
+    {
+        canRotate = false;
+    }
+
+    private void NoRotationCollision()
+    {
+        canRotate = true;
+    }
+
     private void ResetLevTransform()
     {
         levitateTransform.localPosition = startingTransform;
@@ -308,13 +370,15 @@ public class LevitateMoveObject : PowerUp
 
     private void OnEnable()
     {
-        DetectObject.LevObjectDetected += SetLevitatableObject;
+        DetectObject.LevObjectDetected += SetLevitatableObject;       
         //DetectObject.LevObjectExit += ResetLevitatableObj;
     }
 
     private void OnDisable()
     {
         DetectObject.LevObjectDetected -= SetLevitatableObject;
+        //checkRotation.RotationCollision -= IsRotationCollision;
+        //checkRotation.RotationCollisionExit -= NoRotationCollision;
         //DetectObject.LevObjectExit += ResetLevitatableObj;
     }
 }
