@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicMove : MonoBehaviour {
-
+    public AudioSource jumpSound;
     public float movementSpeed;
     public float rotationSpeed;
     private float rotX;
@@ -89,6 +89,7 @@ public class BasicMove : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             GetComponent<Rigidbody>().AddForce((Vector3.up * jumpForce), ForceMode.Impulse);
+            jumpSound.Play();
 
             isOnGround = false;
         }
