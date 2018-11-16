@@ -11,7 +11,7 @@ public class LeverPuzzle : MonoBehaviour
     public bool correctLever = false;
 
     [SerializeField]
-    Light[] torchLights;
+    ParticleSystem[] torchLights;
 
     [SerializeField]
     GameObject creature;
@@ -39,14 +39,14 @@ public class LeverPuzzle : MonoBehaviour
             correctLever = true;
             if(i == 1)
             {
-                torchLights[0].enabled = true;
+                torchLights[0].Play();
                 
                 
             }
             else if(i == 2)
             {
-                torchLights[1].enabled = true;
-                torchLights[2].enabled = true;
+                torchLights[1].Play();
+                torchLights[2].Play();
             }
             if (CheckPuzzle())
             {
@@ -59,7 +59,7 @@ public class LeverPuzzle : MonoBehaviour
             correctLever = false;
             for(int i = 0; i < torchLights.Length; i++)
             {
-                torchLights[i].enabled = false;
+                torchLights[i].Stop();
                 dialogue.dialogueLines = FirstSentences;
                 dialogue.ItemInteraction();
                 
@@ -73,7 +73,7 @@ public class LeverPuzzle : MonoBehaviour
         {
             //What we want to happen when the puzzle is solved goes here
             Debug.Log("Puzzle Solved and Chain broken!");
-            torchLights[6].enabled = true;
+            torchLights[6].Play();
             dialogue.dialogueLines = SecondSentences;
             dialogue.ItemInteraction();
             creature.SetActive(false);
@@ -81,12 +81,6 @@ public class LeverPuzzle : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        dialogue.OutOfRange();
-        
     }
 
     private void DestroyChain()

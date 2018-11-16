@@ -78,8 +78,9 @@ public class DialogueSystem : MonoBehaviour {
             {
                 
                 //Can put input required here
-                if(dialogueEnded == false && Input.GetButtonDown(InteractButton))
+                if(dialogueEnded == false && currentTime == totalwaitTime)
                 {
+                    currentTime++;
                     break;
                 }
                 yield return 0;
@@ -123,8 +124,6 @@ public class DialogueSystem : MonoBehaviour {
             }
             while(true)
             {
-                Debug.Log(currentTime);
-
                 currentTime++;
                 if (currentTime == totalwaitTime/*Input.GetButtonDown(InteractButton)*/)
                 {

@@ -35,9 +35,9 @@ public class ItemInteraction : MonoBehaviour {
         }
     }
 
-    public void OnTriggerExit(Collider other)
-    {
-        dialogueSystem.OutOfRange();
-        this.gameObject.GetComponent<ItemInteraction>().enabled = false;
-    }
+    //public void OnTriggerExit(Collider other)
+    //{
+    //    dialogueSystem.OutOfRange();
+    //    this.gameObject.GetComponent<ItemInteraction>().enabled = false;
+    //}
 }
