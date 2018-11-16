@@ -18,10 +18,12 @@ public class DialogueSystem : MonoBehaviour {
     public bool dialogueActive = false;
     public bool dialogueEnded = false;
     public bool outOfRange = true;
+    
 
     public string InteractButton;
 
-
+    public int totalwaitTime;
+    private int currentTime;
 
 	// Use this for initialization
 	void Start ()
@@ -74,6 +76,7 @@ public class DialogueSystem : MonoBehaviour {
 
             while(true)
             {
+                
                 //Can put input required here
                 if(dialogueEnded == false && Input.GetButtonDown(InteractButton))
                 {
@@ -120,8 +123,12 @@ public class DialogueSystem : MonoBehaviour {
             }
             while(true)
             {
-                if(Input.GetButtonDown(InteractButton))
+                Debug.Log(currentTime);
+
+                currentTime++;
+                if (currentTime == totalwaitTime/*Input.GetButtonDown(InteractButton)*/)
                 {
+                    currentTime = 0;
                     break;
                 }
                 yield return 0;
