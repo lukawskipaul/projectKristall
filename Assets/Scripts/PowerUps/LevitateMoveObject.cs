@@ -9,6 +9,8 @@ public class LevitateMoveObject : PowerUp
     public static event Action TeleMovingObject;
     public static event Action TeleStoppedMovingObject;
 
+    public static event Action<GameObject> SendLevitatingObj;
+
 
 
     Rigidbody objectRigidBody;
@@ -16,6 +18,7 @@ public class LevitateMoveObject : PowerUp
     GameObject levitatingObj;
     bool isLevitatingObject = false;
     bool isRotating = false;
+    bool isCarrying = false;
     bool wasLevitating = false;
     bool isPulling = false;
     bool canRotate;
@@ -68,7 +71,7 @@ public class LevitateMoveObject : PowerUp
     }
 
     private void Start()
-    {      
+    {
         startingTransform = levitateTransform.localPosition;
         energySlider.value = EnergyPercent();
     }
@@ -106,6 +109,19 @@ public class LevitateMoveObject : PowerUp
                     else
                     {
                         isRotating = true;
+                        isCarrying = false;
+                    }
+                }
+                if (Input.GetButtonDown("ToggleCarry"))
+                {
+                    if (isCarrying)
+                    {
+                        isCarrying = false;
+                    }
+                    else
+                    {
+                        isCarrying = true;
+                        isRotating = false;
                     }
                 }
                 LevitateObject(levitatableObj);
@@ -132,18 +148,23 @@ public class LevitateMoveObject : PowerUp
             objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
             objectRigidBody.angularVelocity = Vector3.zero;
             wasLevitating = true;
-            checkRotation = objectToLevitate.GetComponentInChildren<CheckRotation>(); //Each LevitatableObject will have a child that contains a CheckRotation script and a BoxCollider
-            checkRotation.enabled = true;
+            //checkRotation = objectToLevitate.GetComponentInChildren<CheckRotation>(); //Each LevitatableObject will have a child that contains a CheckRotation script and a BoxCollider
+            //checkRotation.enabled = true;
             rotationCheckCollider = objectToLevitate.GetComponentInChildren<MeshCollider>();
             //checkRotation.RotationCollision += IsRotationCollision; //Subscribe to CheckRotation Events
             //checkRotation.RotationCollisionExit += NoRotationCollision;
             levitatingObj = objectToLevitate;
+            OnSendLevitatingObj();
         }
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         OnTeleMovingObject();
         if (isRotating)
-        {           
+        {
             RotateObject();
+        }
+        if (isCarrying)
+        {
+            CarryObject(objectToLevitate, objectTransfrom);
         }
         else
         {
@@ -153,6 +174,14 @@ public class LevitateMoveObject : PowerUp
 
         teleEnergy -= (energyDrainRate * Time.deltaTime);
         Debug.Log("LevitatingObj");
+    }
+
+    private void CarryObject(GameObject objToLevitate, Vector3 objTransform)
+    {
+        ResetLevTransform();
+        OnTeleStoppedMovingObject();
+        objTransform = Vector3.Lerp(objTransform, levitateTransform.position, levitateFollowSpeed * Time.deltaTime);
+        objToLevitate.transform.position = objTransform;
     }
 
     private void GetObjectRigidBody(GameObject objToLevitate)
@@ -194,7 +223,10 @@ public class LevitateMoveObject : PowerUp
     }
 
     private void RotateObject()
-    {       
+    {
+        objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
+        objectRigidBody.angularVelocity = Vector3.zero;
+
         if (Input.GetButtonDown("Vertical"))
         {
 
@@ -368,9 +400,16 @@ public class LevitateMoveObject : PowerUp
         }
     }
 
+    private void OnSendLevitatingObj()
+    {
+        if (SendLevitatingObj != null)
+        {
+            SendLevitatingObj.Invoke(levitatingObj);
+        }
+    }
     private void OnEnable()
     {
-        DetectObject.LevObjectDetected += SetLevitatableObject;       
+        DetectObject.LevObjectDetected += SetLevitatableObject;
         //DetectObject.LevObjectExit += ResetLevitatableObj;
     }
 

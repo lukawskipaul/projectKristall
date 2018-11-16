@@ -21,6 +21,7 @@ public class LeverPuzzle : MonoBehaviour
     public string[] SecondSentences;
 
     private DialogueSystem dialogue;
+    bool isChainDestroyed = false;
 
     public void Start()
     {
@@ -47,21 +48,9 @@ public class LeverPuzzle : MonoBehaviour
                 torchLights[1].enabled = true;
                 torchLights[2].enabled = true;
             }
-            else if(i == 3)
+            if (CheckPuzzle())
             {
-                torchLights[3].enabled = true;
-                torchLights[4].enabled = true;
-                torchLights[5].enabled = true;
-            }
-            if (i == leverOrder.Length)
-            {
-                //What we want to happen when the puzzle is solved goes here
-                Debug.Log("Correct Order!");
-                torchLights[6].enabled = true;
-                dialogue.dialogueLines = SecondSentences;
-                dialogue.ItemInteraction();
-                creature.SetActive(false);
-                PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
+
             }
         }
         else
@@ -78,10 +67,43 @@ public class LeverPuzzle : MonoBehaviour
         }
     }
 
+    private bool CheckPuzzle()
+    {
+        if (i == leverOrder.Length && isChainDestroyed)
+        {
+            //What we want to happen when the puzzle is solved goes here
+            Debug.Log("Puzzle Solved and Chain broken!");
+            torchLights[6].enabled = true;
+            dialogue.dialogueLines = SecondSentences;
+            dialogue.ItemInteraction();
+            creature.SetActive(false);
+            PowerupManager.Instance.UnlockPowerup(PowerupManager.Instance.pushBlock);
+            return true;
+        }
+        return false;
+    }
+
     public void OnTriggerExit(Collider other)
     {
         dialogue.OutOfRange();
         
+    }
+
+    private void DestroyChain()
+    {
+        isChainDestroyed = true;
+        Debug.Log("chain Destroyed");
+        CheckPuzzle();
+    }
+
+    private void OnEnable()
+    {
+        CrystalShot.ObjectDestroyed += DestroyChain;
+    }
+
+    private void OnDisable()
+    {
+        CrystalShot.ObjectDestroyed -= DestroyChain;
     }
 
 }

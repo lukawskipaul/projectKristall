@@ -205,6 +205,7 @@ ModelImporter:
     3300000: Chain3
     3300002: //RootNode
     4300000: Chain3
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -238,7 +239,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

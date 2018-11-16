@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicMove : MonoBehaviour {
+public class BasicMove : MonoBehaviour
+{
 
     public float movementSpeed;
     public float rotationSpeed;
@@ -18,6 +19,7 @@ public class BasicMove : MonoBehaviour {
     public bool isSprinting = false;
     public Rigidbody playerRigidbody;
     private Vector3 vector3;
+    GameObject ObjToLookAt;
 
     [SerializeField]
     float distance = 2f;
@@ -41,14 +43,15 @@ public class BasicMove : MonoBehaviour {
     float fallModifier = 2f;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         playerRigidbody = GetComponent<Rigidbody>();
-        
-	}
+
+    }
 
     void FixedUpdate()
     {
-        if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
         {
             isSprinting = false;
         }
@@ -139,18 +142,25 @@ public class BasicMove : MonoBehaviour {
         rotX -= Input.GetAxis("Mouse Y") * Time.deltaTime * rotationSpeed;
         rotY += Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
 
-        if (rotX < -35f)
+        if (rotX < -45f)
         {
-            rotX = -35f;
+            rotX = -45f;
         }
-        else if (rotX > 35f)
+        else if (rotX > 45f)
         {
-            rotX = 35f;
+            rotX = 45f;
         }
 
         transform.rotation = Quaternion.Euler(0, rotY, 0);
         //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
-        camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+        if (canMove)
+        {
+            camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+        }
+        else
+        {
+            camRig.transform.LookAt(ObjToLookAt.transform);
+        }
 
     }
 
@@ -187,7 +197,6 @@ public class BasicMove : MonoBehaviour {
     private void StopMove()
     {
         canMove = false;
-
     }
 
     private void StartMove()
@@ -195,15 +204,22 @@ public class BasicMove : MonoBehaviour {
         canMove = true;
     }
 
+    private void SetCameraFocus(GameObject focusObj)
+    {
+        ObjToLookAt = focusObj;
+    }
+
     private void OnEnable()
     {
         LevitateMoveObject.TeleMovingObject += StopMove;
         LevitateMoveObject.TeleStoppedMovingObject += StartMove;
+        LevitateMoveObject.SendLevitatingObj += SetCameraFocus;
     }
 
     private void OnDisable()
     {
         LevitateMoveObject.TeleMovingObject -= StopMove;
         LevitateMoveObject.TeleStoppedMovingObject -= StartMove;
+
     }
 }

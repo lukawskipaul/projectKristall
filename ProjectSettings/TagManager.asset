@@ -10,6 +10,7 @@ TagManager:
   - Hookable
   - LevitatableObject
   - Breakable
+  - DestructibleObjects
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Player
   - Ground
   - LevitatingObj
-  - 
+  - IgnorePlayer
   - 
   - 
   - 
