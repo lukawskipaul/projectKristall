@@ -18,6 +18,7 @@ public class BasicMove : MonoBehaviour {
     public bool isSprinting = false;
     public Rigidbody playerRigidbody;
     private Vector3 vector3;
+    GameObject ObjToLookAt;
 
     [SerializeField]
     float distance = 2f;
@@ -150,7 +151,14 @@ public class BasicMove : MonoBehaviour {
 
         transform.rotation = Quaternion.Euler(0, rotY, 0);
         //GameObject.FindWithTag("MainCamera").transform.rotation = Quaternion.Euler(rotX, rotY, 0);
-        camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+        if (canMove)
+        {
+            camRig.transform.localRotation = Quaternion.Euler(rotX, 0, 0);
+        }
+        else
+        {
+            camRig.transform.LookAt(ObjToLookAt.transform);
+        }
 
     }
 
@@ -187,7 +195,6 @@ public class BasicMove : MonoBehaviour {
     private void StopMove()
     {
         canMove = false;
-
     }
 
     private void StartMove()
@@ -195,15 +202,22 @@ public class BasicMove : MonoBehaviour {
         canMove = true;
     }
 
+    private void SetCameraFocus(GameObject focusObj)
+    {
+        ObjToLookAt = focusObj;
+    }
+
     private void OnEnable()
     {
         LevitateMoveObject.TeleMovingObject += StopMove;
         LevitateMoveObject.TeleStoppedMovingObject += StartMove;
+        LevitateMoveObject.SendLevitatingObj += SetCameraFocus;
     }
 
     private void OnDisable()
     {
         LevitateMoveObject.TeleMovingObject -= StopMove;
         LevitateMoveObject.TeleStoppedMovingObject -= StartMove;
+
     }
 }

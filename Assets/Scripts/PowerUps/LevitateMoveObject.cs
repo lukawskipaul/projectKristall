@@ -9,6 +9,8 @@ public class LevitateMoveObject : PowerUp
     public static event Action TeleMovingObject;
     public static event Action TeleStoppedMovingObject;
 
+    public static event Action<GameObject> SendLevitatingObj;
+
 
 
     Rigidbody objectRigidBody;
@@ -138,6 +140,7 @@ public class LevitateMoveObject : PowerUp
             //checkRotation.RotationCollision += IsRotationCollision; //Subscribe to CheckRotation Events
             //checkRotation.RotationCollisionExit += NoRotationCollision;
             levitatingObj = objectToLevitate;
+            OnSendLevitatingObj();
         }
         Vector3 objectTransfrom = objectToLevitate.transform.position;
         OnTeleMovingObject();
@@ -194,7 +197,10 @@ public class LevitateMoveObject : PowerUp
     }
 
     private void RotateObject()
-    {       
+    {
+        objectRigidBody.velocity = Vector3.zero;    //Stops the object from moving once you let it go
+        objectRigidBody.angularVelocity = Vector3.zero;
+
         if (Input.GetButtonDown("Vertical"))
         {
 
@@ -368,6 +374,13 @@ public class LevitateMoveObject : PowerUp
         }
     }
 
+    private void OnSendLevitatingObj()
+    {
+        if (SendLevitatingObj != null)
+        {
+            SendLevitatingObj.Invoke(levitatingObj);
+        }
+    }
     private void OnEnable()
     {
         DetectObject.LevObjectDetected += SetLevitatableObject;       
