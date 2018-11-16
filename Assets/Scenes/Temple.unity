@@ -2231,6 +2231,7 @@ Transform:
   - {fileID: 1177981993}
   - {fileID: 1558617732}
   - {fileID: 2093768638}
+  - {fileID: 1964073276}
   - {fileID: 866620248}
   - {fileID: 214621370}
   - {fileID: 1892563906}
@@ -2255,7 +2256,6 @@ Transform:
   - {fileID: 106925015}
   - {fileID: 1848933881}
   - {fileID: 1430763675}
-  - {fileID: 1964073276}
   - {fileID: 1431105509}
   - {fileID: 176964521}
   - {fileID: 707814493}
@@ -2506,7 +2506,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hover Over the Power To Learn More and Activate it
+  m_Text: 'Click on the Power To Learn More and Activate it. '
 --- !u!222 &538271266
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2771,7 +2771,6 @@ GameObject:
   - component: {fileID: 627986852}
   - component: {fileID: 627986851}
   - component: {fileID: 627986853}
-  - component: {fileID: 627986854}
   m_Layer: 2
   m_Name: EnableDoor
   m_TagString: Untagged
@@ -2816,21 +2815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToEnable: {fileID: 1399220239}
---- !u!114 &627986854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 627986850}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0fdcc0e05654d4409ee4d8ae25fa442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: 
-  sentences:
-  - These doors usually are only opened by the shamans using a crystal.
-  - Maybe a crystal will help open it.
 --- !u!1 &634372679
 GameObject:
   m_ObjectHideFlags: 0
@@ -4668,6 +4652,7 @@ RectTransform:
   - {fileID: 389983853}
   - {fileID: 1073085699}
   - {fileID: 1324401142}
+  - {fileID: 1877313916}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4710,6 +4695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerWheel: {fileID: 389983852}
+  rotationText: {fileID: 0}
   instructions:
   - 'An ability that destroys fragile objects like crystal and moves stronger objects
     like rock.
@@ -5615,7 +5601,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Shoot:\r\nFire = Release Left Mouse\r\n"
+  m_Text: "Shoot:\r\nFire = Click Left Mouse\r\n"
 --- !u!222 &1307475716
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5722,7 +5708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1324401140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6056,7 +6042,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11425720, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22465548, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6351,11 +6337,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11425720, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11425720, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11443776, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
+      propertyPath: label
+      value: Telekinesis
+      objectReference: {fileID: 0}
+    - target: {fileID: 11494620, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
+      propertyPath: label
+      value: Charge
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442716, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1087134420}
+    - target: {fileID: 11442716, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTelekinesisHover
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442716, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 324e3570e08b9c4459b9567b349795bd, type: 2}
@@ -8493,8 +8499,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "General:\r\nMovement = WASD\r\nJump = Space\r\nSprint = Shift\r\nInteract
-    = E\r\nPower Activation = F \r\nPower Wheel = Right Mouse Hold\r\n"
+  m_Text: "General:\r\nMovement = WASD\r\nJump = Space\r\nSprint = Shift\r\nPower
+    Activation = F \r\nPower Wheel = Right Mouse Click\n"
 --- !u!222 &1794469505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9082,6 +9088,81 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed946d2341f970144b2265003a5cd91c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1877313915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1877313916}
+  - component: {fileID: 1877313918}
+  - component: {fileID: 1877313917}
+  m_Layer: 5
+  m_Name: Telekinesis Instructions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1877313916
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877313915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1087134418}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -54.6}
+  m_SizeDelta: {x: 0, y: 109.2}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1877313917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877313915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e63176119f1bffc479b31a32dc955b56, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Switch To Rotation Mode: Tab | Switch To Carry Mode: T | Rotation: WASD
+    | Movement: WS and Mouse'
+--- !u!222 &1877313918
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877313915}
 --- !u!1 &1891311839
 GameObject:
   m_ObjectHideFlags: 0
@@ -9557,7 +9638,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 392286402}
-  m_RootOrder: 27
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1965749890
 Prefab:

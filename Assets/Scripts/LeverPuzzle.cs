@@ -48,8 +48,11 @@ public class LeverPuzzle : MonoBehaviour
                 torchLights[1].Play();
                 torchLights[2].Play();
             }
-            if (CheckPuzzle())
+            if (i == 3 || CheckPuzzle())
             {
+                torchLights[3].Play();
+                torchLights[4].Play();
+                torchLights[5].Play();
 
             }
         }
@@ -73,7 +76,7 @@ public class LeverPuzzle : MonoBehaviour
         {
             //What we want to happen when the puzzle is solved goes here
             Debug.Log("Puzzle Solved and Chain broken!");
-            torchLights[6].Play();
+            torchLights[5].Play();
             dialogue.dialogueLines = SecondSentences;
             dialogue.ItemInteraction();
             creature.SetActive(false);

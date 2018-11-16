@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PowerWheel : MonoBehaviour {
 
     //public Text instructions;
-    public GameObject powerWheel;
+    public GameObject powerWheel, rotationText;
     private bool activated = false;
     PowerupManager powerupManager;
 
@@ -26,10 +26,12 @@ public class PowerWheel : MonoBehaviour {
 		if(Input.GetButtonDown("TogglePowerWheel") && activated == false)
         {
             powerWheel.SetActive(true);
+            activated = true;
         }
         else if(Input.GetButtonDown("TogglePowerWheel") && activated == true)
         {
             powerWheel.SetActive(false);
+            activated = false;
         }
 	}
 
@@ -39,6 +41,7 @@ public class PowerWheel : MonoBehaviour {
         {
             powerupManager.ActivatePower(powerupManager.pushBlock);
             description.text = instructions[0];
+            rotationText.SetActive(false);
         }
         else
         {
@@ -53,6 +56,7 @@ public class PowerWheel : MonoBehaviour {
         {
             powerupManager.ActivatePower(powerupManager.levitateMoveObject);
             description.text = instructions[1];
+            rotationText.SetActive(true);
         }
         else
         {
