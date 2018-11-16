@@ -78,7 +78,7 @@ public class LevitateMoveObject : PowerUp
 
     private void Update()
     {
-        Debug.Log(isPulling);
+        //Debug.Log(isPulling);
         if (isLevitatingObject == true)
         {
             if (Vector3.Distance(player.transform.position, levitatingObj.transform.position) > maxDist || teleEnergy <= 0)

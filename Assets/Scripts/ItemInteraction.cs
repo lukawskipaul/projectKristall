@@ -31,6 +31,7 @@ public class ItemInteraction : MonoBehaviour {
         }
         if(dialogueSystem.dialogueEnded == true)
         {
+
             Destroy(this);
         }
     }

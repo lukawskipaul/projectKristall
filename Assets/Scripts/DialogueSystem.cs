@@ -22,9 +22,12 @@ public class DialogueSystem : MonoBehaviour {
 
     public string InteractButton;
 
-    public int totalwaitTime;
-    private int currentTime;
-
+    public float totalwaitTime;
+    private float currentTime;
+    private float thisCurrentTime;
+    private int currentDialogueIndex;
+    private bool stringFinished = false;
+    private int dialogueLength;
 	// Use this for initialization
 	void Start ()
     {
@@ -47,47 +50,47 @@ public class DialogueSystem : MonoBehaviour {
             dialogueActive = true;
             StartCoroutine(StartDialogue());
         }
-        StartDialogue();
+        //StartDialogue();
     }
 
     private IEnumerator StartDialogue()
     {
         if(outOfRange == false)
         {
-            int dialogueLength = dialogueLines.Length;
-            int currentDialogueIndex = 0;
+            dialogueLength = dialogueLines.Length;
+            currentDialogueIndex = 0;
 
-            while (currentDialogueIndex < dialogueLength || !letterIsMulitplied)
+            while ((currentDialogueIndex < dialogueLength || !letterIsMulitplied) && !dialogueEnded)
             {
                 if(!letterIsMulitplied)
                 {
                     letterIsMulitplied = true;
-                    StartCoroutine(DisplayString(dialogueLines[currentDialogueIndex++]));
-
-                    if(currentDialogueIndex >= dialogueLength)
+                    currentDialogueIndex++;
+                    thisCurrentTime = 0;
+                    stringFinished = false;
+                    StartCoroutine(DisplayString(dialogueLines[currentDialogueIndex-1]));
+                    
+                    if (currentDialogueIndex >= dialogueLength)
                     {
                         dialogueEnded = true;
                     }
+                    
 
                 }
                 yield return 0;
 
             }
-
-            while(true)
+            
+            if (dialogueEnded && stringFinished)
             {
-                
-                //Can put input required here
-                if(dialogueEnded == false && currentTime == totalwaitTime)
-                {
-                    currentTime++;
-                    break;
-                }
-                yield return 0;
+                dialogueEnded = true;
+                thisCurrentTime = 0;
+                Debug.Log("We got here");
+                dialogueEnded = false;
+                dialogueActive = false;
+                DropDialogue();
             }
-            dialogueEnded = false;
-            dialogueActive = false;
-            DropDialogue();
+
         }
 
         
@@ -119,28 +122,45 @@ public class DialogueSystem : MonoBehaviour {
                 else
                 {
                     dialogueEnded = false;
+                    stringFinished = true;
                     break;
                 }
             }
-            while(true)
+            Debug.Log("Premature continuation");
+            while(currentTime < totalwaitTime && stringFinished)
             {
-                currentTime++;
-                if (currentTime == totalwaitTime/*Input.GetButtonDown(InteractButton)*/)
+                //Debug.Log(currentTime + " Display Strings");
+                currentTime+= Time.deltaTime;
+                /*
+                if (currentTime == totalwaitTime Input.GetButtonDown(InteractButton))
                 {
                     currentTime = 0;
                     break;
                 }
+                */
                 yield return 0;
 
             }
+            currentTime = 0;
             dialogueEnded = false;
             letterIsMulitplied = false;
+            //currentDialogueIndex++;
             dialogueText.text = "";
+            if(currentDialogueIndex >= dialogueLength)
+            {
+                DropDialogue();
+            }
         }
     }
 
     public void DropDialogue()
     {
+        Debug.Log("Dialogue box gone");
+        dialogueEnded = true;
+        thisCurrentTime = 0;
+        Debug.Log("We got here");
+        dialogueEnded = false;
+        dialogueActive = false;
         dialogBox.SetActive(false);
     }
 

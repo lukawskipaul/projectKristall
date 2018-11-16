@@ -76,7 +76,7 @@ public class LeverPuzzle : MonoBehaviour
         {
             //What we want to happen when the puzzle is solved goes here
             Debug.Log("Puzzle Solved and Chain broken!");
-            torchLights[5].Play();
+            //torchLights[5].Play();
             dialogue.dialogueLines = SecondSentences;
             dialogue.ItemInteraction();
             creature.SetActive(false);

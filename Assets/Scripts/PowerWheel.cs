@@ -27,17 +27,21 @@ public class PowerWheel : MonoBehaviour {
         {
             powerWheel.SetActive(true);
             activated = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else if(Input.GetButtonDown("TogglePowerWheel") && activated == true)
         {
             powerWheel.SetActive(false);
             activated = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 	}
 
     public void OnChargeHover()
     {
-        if(powerupManager.pushBlock.IsActivated == true)
+        if(powerupManager.pushBlock.IsUnlocked == true)
         {
             powerupManager.ActivatePower(powerupManager.pushBlock);
             description.text = instructions[0];
@@ -52,7 +56,7 @@ public class PowerWheel : MonoBehaviour {
 
     public void OnTelekinesisHover()
     {
-        if(powerupManager.levitateMoveObject.IsActivated == true)
+        if(powerupManager.levitateMoveObject.IsUnlocked == true)
         {
             powerupManager.ActivatePower(powerupManager.levitateMoveObject);
             description.text = instructions[1];

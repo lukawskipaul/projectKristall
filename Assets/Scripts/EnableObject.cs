@@ -13,6 +13,7 @@ public class EnableObject : MonoBehaviour {
         if (other.tag == "Player")
         {
             objectToEnable.SetActive(true);
+            Destroy(this);
         }
         
     }

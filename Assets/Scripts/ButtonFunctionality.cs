@@ -15,6 +15,11 @@ public class ButtonFunctionality : MonoBehaviour {
     public AudioClip hoverSound;
     public AudioClip clickSound;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
     public void OnStartClick()
     {
