@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 9d53b1d06fe285e44ac676219bd7e485
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AltarRoomWalls
+    100002: BigPlatformRoom3
+    100004: Camera
+    100006: FloorAltarRoom
+    100008: HallwayToRoundRoom
+    100010: PlatformAltarRoom
+    100012: Room3Floor
+    100014: Room3Platform1
+    100016: Room3Platform2
+    100018: Room3Roof
+    100020: Room3Walls
+    100022: RoundFloor
+    100024: RoundRoof
+    100026: RoundWallsTemple
+    100028: SmallBox
+    100030: StairAltarRoom
+    100032: StairDownRoom3
+    100034: StairUpRoom3
+    100036: Temple
+    100038: //RootNode
+    400000: AltarRoomWalls
+    400002: BigPlatformRoom3
+    400004: Camera
+    400006: FloorAltarRoom
+    400008: HallwayToRoundRoom
+    400010: PlatformAltarRoom
+    400012: Room3Floor
+    400014: Room3Platform1
+    400016: Room3Platform2
+    400018: Room3Roof
+    400020: Room3Walls
+    400022: RoundFloor
+    400024: RoundRoof
+    400026: RoundWallsTemple
+    400028: SmallBox
+    400030: StairAltarRoom
+    400032: StairDownRoom3
+    400034: StairUpRoom3
+    400036: Temple
+    400038: //RootNode
+    2000000: Camera
+    2100000: lambert3
+    2100002: WallBox
+    2100004: Room3Roof1
+    2100006: WallsRoom3
+    2300000: AltarRoomWalls
+    2300002: BigPlatformRoom3
+    2300004: FloorAltarRoom
+    2300006: HallwayToRoundRoom
+    2300008: PlatformAltarRoom
+    2300010: Room3Floor
+    2300012: Room3Platform1
+    2300014: Room3Platform2
+    2300016: Room3Roof
+    2300018: Room3Walls
+    2300020: RoundFloor
+    2300022: RoundRoof
+    2300024: RoundWallsTemple
+    2300026: SmallBox
+    2300028: StairAltarRoom
+    2300030: StairDownRoom3
+    2300032: StairUpRoom3
+    3300000: AltarRoomWalls
+    3300002: BigPlatformRoom3
+    3300004: FloorAltarRoom
+    3300006: HallwayToRoundRoom
+    3300008: PlatformAltarRoom
+    3300010: Room3Floor
+    3300012: Room3Platform1
+    3300014: Room3Platform2
+    3300016: Room3Roof
+    3300018: Room3Walls
+    3300020: RoundFloor
+    3300022: RoundRoof
+    3300024: RoundWallsTemple
+    3300026: SmallBox
+    3300028: StairAltarRoom
+    3300030: StairDownRoom3
+    3300032: StairUpRoom3
+    4300000: RoundWallsTemple
+    4300002: SmallBox
+    4300004: BigPlatformRoom3
+    4300006: Room3Platform2
+    4300008: Room3Platform1
+    4300010: Room3Roof
+    4300012: RoundRoof
+    4300014: RoundFloor
+    4300016: AltarRoomWalls
+    4300018: PlatformAltarRoom
+    4300020: StairAltarRoom
+    4300022: FloorAltarRoom
+    4300024: StairDownRoom3
+    4300026: StairUpRoom3
+    4300028: Room3Floor
+    4300030: HallwayToRoundRoom
+    4300032: Room3Walls
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
