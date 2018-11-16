@@ -18,13 +18,8 @@ public class ItemInteraction : MonoBehaviour {
         dialogueSystem = FindObjectOfType<DialogueSystem>();
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         this.gameObject.GetComponent<ItemInteraction>().enabled = true;
         //Can add interaction button in
@@ -33,6 +28,10 @@ public class ItemInteraction : MonoBehaviour {
             this.gameObject.GetComponent<ItemInteraction>().enabled = true;
             dialogueSystem.dialogueLines = sentences;
             dialogueSystem.ItemInteraction();
+        }
+        if(dialogueSystem.dialogueEnded == true)
+        {
+            Destroy(this);
         }
     }
 
